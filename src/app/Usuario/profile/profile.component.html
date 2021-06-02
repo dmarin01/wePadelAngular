@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="info-general">
+        <p>Información General 🙂</p>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div>
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" formControlName="username">
+            </div>
+            <div>
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div>
+                <label class="form-label">Apellidos</label>
+                <input type="text" class="form-control" formControlName="apellidos">
+            </div>
+            <div>
+                <label class="form-label">Fecha Registro</label>
+                <input type="text" class="form-control" formControlName="date-registro">
+            </div>
+            <div>
+                <label class="form-label">Teléfono</label>
+                <input type="text" class="form-control" formControlName="telefono">
+            </div>
+            <button class="btn btn-outline-primary">Validar</button>
+        </form>
+
+        <div class="map">
+            <div>Dirección Postal</div>
+            <div class="mapa-google">
+                <!--cargar mapa de google-->
+            </div>
+        </div>
+
+        <div class="foto-perfil">
+            <div class="foto">Foto de perfil 📷 </div>
+            <div class="foto">
+                <img src="" alt="">
+            </div>
+            <button class="btn btn-outline-primary" (click)="onClick()">Subir</button>
+        </div>
+
+
+    </div>
+</div>

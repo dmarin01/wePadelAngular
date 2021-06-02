@@ -2,11 +2,23 @@
 .col_white_amrc {
      color:#FFF;
 }
+body {
+  position: relative;
+}
+body::after {
+  content: '';
+  display: block;
+  height: 50px; /* Set same as footer's height */
+}
+
 footer { 
     width:100%; 
     background-color:#263238; 
     min-height:250px; 
     padding:10px 0px 25px 0px ;
+    position: absolute;
+    bottom: 0;
+    height: 1.5em;
 }
 .pt2 { 
     padding-top:40px ; margin-bottom:20px ;
@@ -56,6 +68,7 @@ footer p {
 .bottom_border { 
     border-bottom:1px solid #323f45; padding-bottom:20px;
 }
+
 .foote_bottom_ul_amrc {
 	list-style-type:none;
 	padding:0px;
@@ -63,7 +76,6 @@ footer p {
 	margin-top: 10px;
 	margin-right: auto;
 	margin-bottom: 10px;
-	margin-left: auto;
 }
 .foote_bottom_ul_amrc li { 
     display:inline;
@@ -73,7 +85,8 @@ footer p {
 }
 
 .social_footer_ul { 
-    display:table; margin:15px auto 0 auto; list-style-type:none;  
+    display:table; margin:15px auto 0 auto; 
+    list-style-type:none; 
 }
 .social_footer_ul li { 
     padding-left:20px; padding-top:10px; float:left; 

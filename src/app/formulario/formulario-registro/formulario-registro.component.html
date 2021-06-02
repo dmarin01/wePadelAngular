@@ -1,0 +1,15 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div>
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" formControlName="username">
+    </div>
+    <div>
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div>
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+    <button class="btn btn-outline-primary">Registrar</button>
+</form>
