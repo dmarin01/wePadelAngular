@@ -9,10 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { MainComponent } from './Home/main/main.component';
 import { HeaderComponent } from './home/header/header.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FormularioRegistroComponent } from './formulario/formulario-registro/formulario-registro.component';
 import { FormularioLoginComponent } from './formulario/formulario-login/formulario-login.component';
 import { ProfileComponent } from './Usuario/profile/profile.component';
+import { MapaComponent } from './mapa/mapa.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -21,16 +22,19 @@ import { ProfileComponent } from './Usuario/profile/profile.component';
     MainComponent,
     FooterComponent,
     HeaderComponent,
-    UserProfileComponent,
     FormularioRegistroComponent,
     FormularioLoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    MapaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBXoe3vvdGGosbpLVZqUncQDgiW4UAbl58'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,9 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 export class ProfileComponent implements OnInit {
 
   formulario: FormGroup;
+  arrImg: any = [];
+  loading: boolean;
+
   constructor(private usuariosService: UsuariosService) {
 
     this.formulario = new FormGroup({
@@ -21,13 +24,44 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  //indicar la base de la ur
+
+
   ngOnInit(): void {
   }
+
+  //formulario del usuario
   onSubmit() {
 
   }
+  //onclick para subir la imagen
+  capturarFile(event) {
 
-  onClick() {
+    const imgInsert = event.target.files[0];
+    this.arrImg.push(imgInsert);
+  }
 
+  onClick(): any {
+
+    try {
+      this.loading = true;
+      const formularioImg = new FormData();
+      this.arrImg.forEach(img => {
+        formularioImg.append('foto', img)
+      })
+
+      //crear el servicio post para el servidor
+      this.usuariosService.post('http://localhost:3000/upload', formularioImg)
+        .suscribe(res => {
+          this.loading = false;
+          console.log('esperando al servidor', res)
+        })
+
+    } catch (event) {
+      this.loading = false;
+      console.log('Error de carga', event)
+    }
   }
 }
+
+
