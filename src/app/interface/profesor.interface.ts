@@ -6,5 +6,5 @@ export interface Cliente {
     niveles: number;
     desplazamiento: number;
     rango_desplazamiento: number;
-    fk_clientes: number;
+    fk_clientes?: number;
 }

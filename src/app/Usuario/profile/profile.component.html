@@ -1,71 +1,14 @@
-<div class="header">
-    <div class="up-header">
-        <div class="left">
-            <div class="logo">
-                <a href="/">
-                    <img src="../../../assets/img/" alt=""></a>
-            </div>
-            <form>
-                <div class="search-bar-container">
-                    <input type="text" placeholder=" Busca partido o tu mejor profesor ">
-                </div>
-            </form>
+<app-navbar></app-navbar>
 
-        </div>
-    </div>
 
-    <nav class="navMenu">
-        <a href="#">Home</a>
-        <a href="#">Blog</a>
-        <a href="#">Work</a>
-        <a href="#">About</a>
-        <div class="dot"></div>
-    </nav>
-
-    <div class="container">
-        <div class="info-general">
-            <h1>Información General 🙂</h1>
-            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-                <div>
-                    <label class="form-label">Username</label>
-                    <input type="text" class="form-control" formControlName="username">
-                </div>
-                <div>
-                    <label class="form-label">Nombre</label>
-                    <input type="text" class="form-control" formControlName="name">
-                </div>
-                <div>
-                    <label class="form-label">Apellidos</label>
-                    <input type="text" class="form-control" formControlName="apellidos">
-                </div>
-                <div>
-                    <label class="form-label">Fecha Registro</label>
-                    <input type="text" class="form-control" formControlName="date-registro">
-                </div>
-                <div>
-                    <label class="form-label">Teléfono</label>
-                    <input type="text" class="form-control" formControlName="telefono">
-                </div>
-                <button class="btn btn-outline-primary">Validar</button>
-            </form>
-        </div>
-
-        <div class="map">
+<div class="container">
+    <div class="row">
+        <div class="map col-3">
             <h1>Ubicación <i class="fas fa-map-marked-alt"></i></h1>
             <div class="mapa-google">
                 <input type="text" class="form-control" formControlName="direction" placeholder="Indica tu dirección">
                 <app-mapa></app-mapa>
             </div>
         </div>
-
-        <div class="foto-perfil">
-            <div class="foto">Foto de perfil 📷
-                <input type="file" (change)="capturarFile">
-            </div>
-            <div>
-                <button [disabled]="loading" (click)="onClick">Subir foto</button>
-            </div>
-        </div>
-
-
     </div>
+</div>

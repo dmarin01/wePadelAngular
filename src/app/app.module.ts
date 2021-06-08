@@ -14,6 +14,7 @@ import { FormularioLoginComponent } from './formulario/formulario-login/formular
 import { ProfileComponent } from './Usuario/profile/profile.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { AgmCoreModule } from '@agm/core';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AgmCoreModule } from '@agm/core';
     FormularioLoginComponent,
     ProfileComponent,
     MapaComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

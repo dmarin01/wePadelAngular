@@ -2,7 +2,7 @@
 
 ///<reference path="../../../node_modules/@types/googlemaps/index.d.ts"
 
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
