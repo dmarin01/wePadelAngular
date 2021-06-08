@@ -9,14 +9,27 @@
 
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="btn btn-dark me-3 nav-link active" aria-current="page" href="#">Dar clases
+                            particulares</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Mi configuración</a>
+                        <a class="nav-link me-4" href="#">Ayuda</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Desconectar</a>
-                    </li>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Mi usuario
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item active" href="/user">Mi cuenta</a></li>
+                            <li><a class="dropdown-item" href="#">Panel de control</a></li>
+                            <li><a class="dropdown-item" href="#">Ayuda</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Desconectarse</a></li>
+                        </ul>
+                    </div>
                 </ul>
             </div>
         </nav>

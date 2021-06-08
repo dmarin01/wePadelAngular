@@ -1,1 +1,19 @@
+.miga{
+    background-color: cornflowerblue;
+    height: 4rem;
+}
+
+.divnav{
+    color: black;
+    text-decoration: none;
+}
+
+.box1, .box2 {
+    background-color: thistle;
+    width: 100%;
+    
+
+}
+
+
 
