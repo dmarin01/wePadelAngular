@@ -15,6 +15,7 @@ import { ProfileComponent } from './Usuario/profile/profile.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { AgmCoreModule } from '@agm/core';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarUserComponent } from './Usuario/navbar-user/navbar-user.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ProfileComponent,
     MapaComponent,
     NavbarComponent,
+    NavbarUserComponent,
   ],
   imports: [
     BrowserModule,
