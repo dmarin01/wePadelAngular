@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #272727;
+  font-family: "Montserrat", sans-serif;
+}
+
+/*LOGO Y BUSCADOR*/
+.header{
+    width: 100vw;
+    position: fixed;
+    top:0;
+    z-index: 900;
+}
+.up-header{
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+}
+.left{
+    float: left;
+}
+.logo{
+    height: 100%;
+    box-sizing: border-box;
+    min-width: 55px;
+    display: inline-block;
+    border: 5px;
+    position: relative;
+    padding: 15px 20px;
+}
+img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+}
+.header .search-bar-container{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+.search-bar-container .search input{
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.navMenu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.navMenu a {
+  color: #f6f4e6;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  width: 80px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+  color: #fddb3a;
+}
+
+.navMenu .dot {
+  width: 6px;
+  height: 6px;
+  background: #fddb3a;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(1):hover ~ .dot {
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(2):hover ~ .dot {
+  -webkit-transform: translateX(110px);
+  transform: translateX(110px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(3):hover ~ .dot {
+  -webkit-transform: translateX(200px);
+  transform: translateX(200px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(4):hover ~ .dot {
+  -webkit-transform: translateX(285px);
+  transform: translateX(285px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info-general{
+    width: 33.3%;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    border: 3px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+}
+.info-general h1{
+    font-size: 24px;
+}
+.map{
+    box-sizing: border-box;
+    width: 33.3%;
+    border: 3px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    justify-content: center;
+}
+.map h1{
+    font-size: 24px;
+    justify-content: center;
+}
+.map h1 i{
+    margin-left: 10px;
+    color: rgb(57, 185, 162);
+}
+.mapa-google{
+    width: 100%;
+}
+
+.foto-perfil{
+    width: 33.3%;
+    border: 3px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px; 
+}
+.info-general button{
+    margin-top: 20px;
+}
+
