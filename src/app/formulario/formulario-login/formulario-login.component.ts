@@ -23,7 +23,7 @@ export class FormularioLoginComponent implements OnInit {
   }
 
   async onSubmit() {
-    const response = await this.usuariosServices.login(this.formulario.value);
+    const response = await this.usuariosServices.loginUser(this.formulario.value);
     if (response['error']) {
       Swal.fire('Error de login', response['error'], 'error');
     } else {

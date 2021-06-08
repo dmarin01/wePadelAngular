@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Cliente } from '../interface/cliente.interface'
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,18 @@ export class UsuariosService {
 
     this.baseUrl = 'http://localhost:4200';
   }
-  registro(formValues: any) {
-    return this.httpClient.post(`${this.baseUrl}/registro`, formValues).toPromise();
+
+  //formulario
+  registerUser(formValues: any) {
+    return this.httpClient.post(`${this.baseUrl}/register`, formValues).toPromise();
   }
-  login(formValues: any) {
+  loginUser(formValues: any) {
     return this.httpClient.post(`${this.baseUrl}/login`, formValues).toPromise();
+  }
+
+
+  //peticion post images
+  upLoadPhoto(idCliente: Cliente) {
+    return this.httpClient.post<Cliente>(`${this.baseUrl}upload=`, idCliente).toPromise();
   }
 }

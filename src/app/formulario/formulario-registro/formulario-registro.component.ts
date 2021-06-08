@@ -25,7 +25,7 @@ export class FormularioRegistroComponent implements OnInit {
   }
   onSubmit() {
     // this.formulario.value
-    this.usuariosService.registro(this.formulario.value)
+    this.usuariosService.registerUser(this.formulario.value)
       .then(response => {
         console.log(response);
 
