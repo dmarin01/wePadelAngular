@@ -7,7 +7,7 @@ import { ProfileComponent } from './Usuario/profile/profile.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
-  { path: 'registro', component: FormularioRegistroComponent },
+  { path: 'register', component: FormularioRegistroComponent },
   { path: 'login', component: FormularioLoginComponent },
   { path: 'user', component: ProfileComponent },
   { path: '**', component: HomeComponent },

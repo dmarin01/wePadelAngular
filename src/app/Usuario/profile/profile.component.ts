@@ -51,12 +51,7 @@ export class ProfileComponent implements OnInit {
         formularioImg.append('foto', img)
       })
 
-      //crear el servicio post para el servidor
-      this.usuariosService.post('http://localhost:3000/upload', formularioImg)
-        .suscribe(res => {
-          this.loading = false;
-          console.log('esperando al servidor', res)
-        })
+
 
     } catch (event) {
       this.loading = false;

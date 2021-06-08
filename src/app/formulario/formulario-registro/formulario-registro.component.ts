@@ -15,32 +15,37 @@ export class FormularioRegistroComponent implements OnInit {
   constructor(private usuariosService: UsuariosService) {
 
     this.formulario = new FormGroup({
-      username: new FormControl(),
+      nombre: new FormControl(),
+      apellidos: new FormControl(),
+      user_name: new FormControl(),
       email: new FormControl(),
-      password: new FormControl()
-    })
+      password: new FormControl(),
+      telefono: new FormControl()
+    });
   }
 
   ngOnInit(): void {
   }
   onSubmit() {
     // this.formulario.value
+
     this.usuariosService.registerUser(this.formulario.value)
+
       .then(response => {
-        console.log(response);
+        console.log(response)
 
-        if (response['affectedRows'] === 1) {
-          Swal.fire('Registro completado con éxito');
-          this.formulario.reset();
-        }
+        // if (response) {
+        //   Swal.fire('Registro completado con éxito');
+        //   this.formulario.reset();
+        // }
 
-        if (response['error']) {
-          Swal.fire(
-            'Error registro!',
-            response['error'],
-            'error'
-          )
-        }
+        // if (response['error']) {
+        //   Swal.fire(
+        //     'Error registro!',
+        //     response['error'],
+        //     'error'
+        //   )
+        // }
 
       })
       .catch(error => console.log(error));

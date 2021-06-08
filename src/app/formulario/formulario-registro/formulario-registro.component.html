@@ -1,11 +1,23 @@
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div>
         <label class="form-label">Username</label>
-        <input type="text" class="form-control" formControlName="username">
+        <input type="text" class="form-control" formControlName="user_name">
+    </div>
+    <div>
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+    </div>
+    <div>
+        <label class="form-label">Apellidos</label>
+        <input type="text" class="form-control" formControlName="apellidos">
     </div>
     <div>
         <label class="form-label">Email</label>
         <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div>
+        <label class="form-label">Telefono</label>
+        <input type="text" class="form-control" formControlName="telefono">
     </div>
     <div>
         <label class="form-label">Password</label>
