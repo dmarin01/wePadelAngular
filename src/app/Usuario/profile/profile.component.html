@@ -1,13 +1,79 @@
-<app-navbar></app-navbar>
-
-
-<div class="container">
-    <div class="row">
-        <div class="map col-3">
-            <h1>Ubicación <i class="fas fa-map-marked-alt"></i></h1>
-            <div class="mapa-google">
-                <input type="text" class="form-control" formControlName="direction" placeholder="Indica tu dirección">
-                <app-mapa></app-mapa>
+<app-navbar-user></app-navbar-user>
+<div class="wrapper">
+    <div class="miga">
+        <div class="container">
+            <div class="d-flex justify-content-evenly divnav">
+                <button class="btn ms-3 mt-3" href="">Mi usuario</button>
+                <div>
+                    <button class="btn mt-3 ms-5" href="">Descontectarse</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-12 mt-5 ps-5">
+                <div class="card" style="width: 18rem;">
+                    <img style="border-radius: 50%; width: 10rem; margin: 1rem auto;"
+                        src="https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Monitor</h5>
+                        <p class="card-text">Llevo dando clases de pádel durante más de 3 años de experiencia</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Nombre: Pedro</li>
+                        <li class="list-group-item">Apellidos: Lopez Sanchez</li>
+                        <li class="list-group-item">Ubicación: Madrid</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Teléfono</a>
+                        <a href="#" class="card-link">Correo electrónico</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-sm-12 mt-5 pe-5">
+                <div>
+                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre de usuario</label>
+                            <input type="text" class="form-control" formControlName="username" value="username">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control" formControlName="nombre" value="nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" formControlName="apellidos" value="apellidos">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Dirección</label>
+                            <input type="text" class="form-control" formControlName="direccion" value="direccion">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nivel</label>
+                            <input type="text" class="form-control" formControlName="nivel" value="nivel">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Telefono</label>
+                            <input type="text" class="form-control" formControlName="telefono" value="telefono">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="text" class="form-control" formControlName="email" value="email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Edad</label>
+                            <input type="text" class="form-control" formControlName="edad" value="edad">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">DNI</label>
+                            <input type="text" class="form-control" formControlName="dni" value="dni">
+                        </div>
+                        <button class="btn btn-success mb-3">Enviar</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
