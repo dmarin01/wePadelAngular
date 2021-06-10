@@ -3,13 +3,33 @@
     padding: 0;
     margin: 0;
 }
-main{
-    text-align: center;
+.logo{
+    width: 10em;
+    height: 3em;
 }
-h1{
-    font-size: 50px;
-    font-family: sans-serif;
-    font-weight: bold;
-    line-height: 75px;
-    margin: 0 auto 40px;
+.logo img{
+    width: 100%;
+}
+.buttons{
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+}
+.buttons a{
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.6 rem;
+    font-weight: 600;
+    height: 2em;
+    line-height: 2em;
+    overflow: hidden;
+    outline-width: .125em ;
+    padding: 0 0.5em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 0.25em;
+    color: white;
 }
