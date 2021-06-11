@@ -3,7 +3,6 @@ export interface Cliente {
     nombre: string;
     apellidos: string;
     email: string;
-    dni: string;
     direccion: string;
     telefono: string;
     edad: number;

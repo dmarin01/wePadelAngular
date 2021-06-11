@@ -39,10 +39,16 @@ ul .footer-social{
 .footer-menu{
     color: white;
     text-align: center;
+    display: flex;
+}
+.text-xs-center{
+    text-align: center;
+    
+    
 }
 .footer-menu a{
     text-decoration: none;
-    background-color: transparent;
+    color: white;
 }
 
 

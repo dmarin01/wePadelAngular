@@ -3,33 +3,62 @@
     padding: 0;
     margin: 0;
 }
+nav{
+    height: 8em;
+    background-color: transparent;
+}
+.navbar-collapse{
+    margin-bottom: 3px;
+    margin-right:2em ;
+}
+.navbar-collapse li{
+    margin-right: 7em ;
+    cursor: pointer;
+}
+.navbar-collapse li a{
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+.nav-link:hover{
+    color: blue;
+}
+
+.banner-image{
+    background-image: url('../../../assets/img/ig_landign01.jpg');
+    background-size: cover;
+}
+
+
 .logo{
-    width: 10em;
+    width: 7em;
     height: 3em;
 }
 .logo img{
     width: 100%;
+}
+.imagen_main{
+    width: 100%;
+    margin: 0 auto;
 }
 .buttons{
     flex-wrap: nowrap;
     flex-shrink: 0;
 }
 .buttons a{
-    border: 0;
-    box-sizing: border-box;
     cursor: pointer;
-    display: inline-block;
-    font-size: 1.6 rem;
-    font-weight: 600;
-    height: 2em;
-    line-height: 2em;
-    overflow: hidden;
-    outline-width: .125em ;
-    padding: 0 0.5em;
-    position: relative;
-    text-align: center;
+    padding: 0 1em;
     text-decoration: none;
-    background-color: transparent;
-    border-radius: 0.25em;
     color: white;
+    font-size: 18px;
 }
+
+
+
+        /* Height for devices larger than 576px */
+        @media (min-width: 992px) {
+            #intro {
+                margin-top: -58.59px;
+            }
+        
+    }
