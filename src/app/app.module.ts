@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { ProfileComponent } from './Usuario/profile/profile.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { AgmCoreModule } from '@agm/core';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ListProfComponent } from './Listado/list-prof/list-prof.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +29,13 @@ import { NavbarComponent } from './navbar/navbar.component';
     ProfileComponent,
     MapaComponent,
     NavbarComponent,
+    ListProfComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBXoe3vvdGGosbpLVZqUncQDgiW4UAbl58'
