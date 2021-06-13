@@ -1,6 +1,6 @@
 {
   "name": "we-padel-angular",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -23,6 +23,7 @@
     "@types/googlemaps": "^3.39.12",
     "bootstrap": "^5.0.1",
     "rxjs": "~6.6.0",
+    "sweetalert2": "^11.0.17",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },

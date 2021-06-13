@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Cliente } from '../interface/cliente.interface';
+import { Login } from '../interface/Login.interface';
+import { Usuario } from '../interface/usuario.interface';
 
 
 @Injectable({
@@ -12,15 +14,15 @@ export class UsuariosService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:4200';
+    this.baseUrl = 'http://localhost:3000';
   }
 
   //formulario
-  registerUser(formValues: any) {
-    return this.httpClient.post(`${this.baseUrl}/register`, formValues).toPromise();
+  registerUser(formValues: Usuario) {
+    return this.httpClient.post(`${this.baseUrl}/api/usuarios/register`, formValues).toPromise();
   }
-  loginUser(formValues: any) {
-    return this.httpClient.post(`${this.baseUrl}/login`, formValues).toPromise();
+  loginUser(formValues: Login) {
+    return this.httpClient.post(`http://localhost:3000/api/usuarios/login`, formValues).toPromise();
   }
 
 

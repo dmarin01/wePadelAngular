@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 declare var Swal;
@@ -10,9 +11,10 @@ declare var Swal;
   styleUrls: ['./formulario-registro.component.css']
 })
 export class FormularioRegistroComponent implements OnInit {
+
   formulario: FormGroup;
 
-  constructor(private usuariosService: UsuariosService) {
+  constructor(private usuariosService: UsuariosService, private router: Router) {
 
     this.formulario = new FormGroup({
       nombre: new FormControl(),
@@ -26,29 +28,29 @@ export class FormularioRegistroComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit() {
+  async onSubmit() {
     // this.formulario.value
+    console.log(this.formulario.value);
 
-    this.usuariosService.registerUser(this.formulario.value)
+    try {
+      const response = await this.usuariosService.registerUser(this.formulario.value);
 
-      .then(response => {
-        console.log(response)
+      console.log(response);
 
-        // if (response) {
-        //   Swal.fire('Registro completado con éxito');
-        //   this.formulario.reset();
-        // }
+      if (response['affectedRows'] === 1) {
+        Swal.fire('Te has registrado correctamente');
+        this.formulario.reset();
+        this.router.navigate['/login'];
+      }
 
-        // if (response['error']) {
-        //   Swal.fire(
-        //     'Error registro!',
-        //     response['error'],
-        //     'error'
-        //   )
-        // }
+      if (response['error']) {
+        Swal.fire('Ha ocurrido un error', response['error'], 'error')
+      }
+    } catch (err) {
+      console.log(err);
 
-      })
-      .catch(error => console.log(error));
+    }
+
   }
 
 
