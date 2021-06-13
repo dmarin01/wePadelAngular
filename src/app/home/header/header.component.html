@@ -1,38 +1,43 @@
-<div class="header-blue">
-    <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
-        <div class="container">
-            <a class="navbar-brand" href="#">WE PADEL</a>
-
-            <!-- BOTON HAMBURGER -->
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
-                <span class="sr-only">Toggle
-                    navigation</span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- BUSQUEDA EN HEADER/LUPA -->
-            <form class="form-inline mr-auto" target="_self">
-                <div class="form-group">
-                    <label for="search-field"><i class="fa fa-search"></i></label><input
-                        class="form-control search-field" type="search" name="search" id="search-field">
-                </div>
-            </form>
-
-            <!-- BARRA NAVEGACIÓN EN HEADER -->
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" href="#">Dar clases particulares</a>
-                    </li>
-                </ul>
-                <div class="btnheader d-flex">
-                    <div class="navbar-text"> <a href="#" class="login">Log In</a></div>
-                    <div><a class="btn btn-light action-button ms-4" role="button" href="#">Sign Up</a></div>
-                </div>
-            </div>
+<nav class="nav-bar fixed-top navbar-expand-lg navbar-dark p-md-3">
+    <div class="container">
+        <div class="logo">
+            <img src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg" alt="">
         </div>
-    </nav>
-</div>
+        <button type="button" class="navbar-toggler" aria-controls="navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="mx-auto"></div>
+            <ul class="navbar-nav breadcrumb">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Conócenos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Busca tu profesor</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li>
+                <div class="buttons">
+                    <a routerLink="/register">Unirse Ahora</a>
+                    <a routerLink="/login">Iniciar sesion</a>
+                </div>
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+<!--Banner Image -->
+<main>
+    <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+        <div class="imagen">
+            <img src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg" alt="">
+        </div>
+    </div>
+</main>
+<!--Main Content-->

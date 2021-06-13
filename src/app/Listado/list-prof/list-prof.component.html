@@ -1,0 +1,16 @@
+<!--NAVBAR-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <ul id="filter-list">
+                <li class="filter" data-filter="1" (click)="viewPrecio()">Precio</li>
+                <li class="filter" data-filter="2">Nivel</li>
+                <li class="filter" data-filter="3">Instalaciones</li>
+            </ul>
+        </div>
+        <div class="col-md-12 text-center" *ngIf="(isViewPrecio)">
+            <input (input)=" onInput($event)" [(ngModel)]="precio">
+        </div>
+
+    </div>
+</div>
