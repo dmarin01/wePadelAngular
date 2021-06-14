@@ -40,7 +40,7 @@ export class FormularioRegistroComponent implements OnInit {
       if (response['affectedRows'] === 1) {
         Swal.fire('Te has registrado correctamente');
         this.formulario.reset();
-        this.router.navigate['/login'];
+        this.router.navigate['/'];
       }
 
       if (response['error']) {
