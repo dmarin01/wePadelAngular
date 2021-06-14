@@ -28,12 +28,12 @@ export class UsuariosService {
 
   //profile component
   getUser(id): Promise<Cliente> {
-
     return this.httpClient.get<Cliente>(`${this.baseUrl}/api/clientes/user/${id}`).toPromise();
   }
 
-  updateUser(formValues: Usuario) {
-    return this.httpClient.put(`${this.baseUrl}/api/clientes/update`, formValues).toPromise();
+  updateUser(formValues: Cliente) {
+
+    return this.httpClient.put(`${this.baseUrl}/api/clientes/update/${formValues.id}`, formValues).toPromise();
   }
 
 }

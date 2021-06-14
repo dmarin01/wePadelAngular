@@ -37,7 +37,7 @@
                     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
                         <div class="mb-3">
                             <label class="form-label">Id usuario</label>
-                            <input type="text" class="form-control" formControlName="id">
+                            <input type="text" class="form-control" formControlName="id" disabled>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Nombre de usuario</label>
@@ -71,7 +71,7 @@
                             <label class="form-label">Edad</label>
                             <input type="text" class="form-control" formControlName="edad">
                         </div>
-                        <button class="btn btn-success mb-3">Enviar</button>
+                        <button class="btn btn-success mb-3">Guardar</button>
                     </form>
                 </div>
             </div>

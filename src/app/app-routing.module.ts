@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'login', component: FormularioLoginComponent },
   { path: 'user', component: ProfileComponent },
   { path: 'user/:id', component: ProfileComponent },
+  { path: 'update', component: ProfileComponent },
   { path: 'list', component: ListProfComponent },
   { path: '**', component: HomeComponent },
 ];
