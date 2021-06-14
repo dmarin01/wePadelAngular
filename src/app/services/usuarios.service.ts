@@ -17,43 +17,19 @@ export class UsuariosService {
     this.baseUrl = 'http://localhost:3000';
   }
 
-  //formulario
+  //formulario component
   registerUser(formValues: Usuario) {
     return this.httpClient.post(`${this.baseUrl}/api/usuarios/register`, formValues).toPromise();
   }
   loginUser(formValues: Login) {
-    return this.httpClient.post(`http://localhost:3000/api/usuarios/login`, formValues).toPromise();
+    return this.httpClient.post(`${this.baseUrl}/api/usuarios/login`, formValues).toPromise();
   }
 
+  //profile component
+  getUser(id): Promise<Cliente> {
 
-  //peticion post images
-  upLoadPhoto(idCliente: Cliente) {
-    return this.httpClient.post<Cliente>(`${this.baseUrl}upload=`, idCliente).toPromise();
-  }
-
-  getAll(pPage = 1, pLimit = 20): Promise<Cliente[]> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        authorization: localStorage.getItem('token')
-      })
-    }
-    return this.httpClient.get<Cliente[]>(`${this.baseUrl}?limit=${pLimit}&page=${pPage}`, httpOptions).toPromise();
-  }
-
-  createUser(pCliente: Cliente) {
-    return this.httpClient.post<Cliente[]>(this.baseUrl, pCliente).toPromise()
-  }
-
-
-
-  updateClient(pCliente) {
-    return this.httpClient.post<Cliente[]>(this.baseUrl, pCliente).toPromise()
-  }
-
-
-
-  deteleClient(idCliente) {
-    return this.httpClient.get<Cliente>(`${this.baseUrl}delete=`, idCliente).toPromise();
+    return this.httpClient.get<Cliente>(`${this.baseUrl}/api/clientes/user/${id}`).toPromise();
 
   }
+
 }

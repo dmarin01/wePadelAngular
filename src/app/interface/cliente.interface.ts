@@ -1,11 +1,12 @@
 export interface Cliente {
     id: number;
+    username: string;
     nombre: string;
     apellidos: string;
-    email: string;
     direccion: string;
-    telefono: string;
-    edad: number;
     nivel: number;
+    telefono: string;
+    email: string;
+    edad: number;
     fecha_inscripcion: Date;
 }

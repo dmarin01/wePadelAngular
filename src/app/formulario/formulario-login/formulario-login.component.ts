@@ -37,7 +37,8 @@ export class FormularioLoginComponent implements OnInit {
       console.log(response);
 
       localStorage.setItem('token', response['token']);
-      this.router.navigate['/register'];
+      this.router.navigate(['/user/', response['id']]);
+
 
     }
   }

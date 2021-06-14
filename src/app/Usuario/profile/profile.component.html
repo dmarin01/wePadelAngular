@@ -37,11 +37,11 @@
                     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
                         <div class="mb-3">
                             <label class="form-label">Nombre de usuario</label>
-                            <input type="text" class="form-control" formControlName="username" value="username">
+                            <input type="text" class="form-control" formControlName="username" value="">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Nombre</label>
-                            <input type="text" class="form-control" formControlName="nombre" value="nombre">
+                            <input type="text" class="form-control" formControlName="nombre">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Apellidos</label>
@@ -66,10 +66,6 @@
                         <div class="mb-3">
                             <label class="form-label">Edad</label>
                             <input type="text" class="form-control" formControlName="edad" value="edad">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">DNI</label>
-                            <input type="text" class="form-control" formControlName="dni" value="dni">
                         </div>
                         <button class="btn btn-success mb-3">Enviar</button>
                     </form>
