@@ -19,6 +19,11 @@ export class ListProfComponent implements OnInit {
   nivelSeleccionado: string;
   instalacionesSeleccionada: boolean;
 
+  arrPrecio: any[];
+  arrNivel: any[];
+  arrInstalaciones: any[];
+
+
   constructor() {
     this.precio = 0;
     this.isViewPrecio = false;
