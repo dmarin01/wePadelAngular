@@ -19,6 +19,7 @@ export class UsuariosService {
 
   //formulario component
   registerUser(formValues: Usuario) {
+    formValues.fecha_inscripcion = new Date();
     return this.httpClient.post(`${this.baseUrl}/api/usuarios/register`, formValues).toPromise();
   }
   loginUser(formValues: Login) {
@@ -29,7 +30,10 @@ export class UsuariosService {
   getUser(id): Promise<Cliente> {
 
     return this.httpClient.get<Cliente>(`${this.baseUrl}/api/clientes/user/${id}`).toPromise();
+  }
 
+  updateUser(formValues: Usuario) {
+    return this.httpClient.put(`${this.baseUrl}/api/clientes/update`, formValues).toPromise();
   }
 
 }

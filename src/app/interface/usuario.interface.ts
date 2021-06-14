@@ -5,4 +5,5 @@ export interface Usuario {
     email: string;
     telefono: number;
     password: string
+    fecha_inscripcion?: Date;
 }
