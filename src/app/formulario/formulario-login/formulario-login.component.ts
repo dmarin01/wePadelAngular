@@ -29,15 +29,16 @@ export class FormularioLoginComponent implements OnInit {
     console.log(response);
 
     if (response['error']) {
-      //Swal.fire('Error de login', response['error'], 'error');
+      Swal.fire('Error de login', response['error'], 'error');
       console.log(response);
 
     } else {
-      // Swal.fire('Login Correcto', 'Ya puedes disfrutar de la aplicación', 'success');
+      Swal.fire('Login Correcto', 'Ya puedes disfrutar de la aplicación', 'success');
       console.log(response);
 
       localStorage.setItem('token', response['token']);
-      this.router.navigate['/register'];
+      this.router.navigate(['/user/', response['id']]);
+
 
     }
   }

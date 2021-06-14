@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'register', component: FormularioRegistroComponent },
   { path: 'login', component: FormularioLoginComponent },
   { path: 'user', component: ProfileComponent },
+  { path: 'user/:id', component: ProfileComponent },
   { path: 'list', component: ListProfComponent },
   { path: '**', component: HomeComponent },
 ];

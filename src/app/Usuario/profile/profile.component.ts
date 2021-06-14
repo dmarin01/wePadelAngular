@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Cliente } from 'src/app/interface/cliente.interface';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 
@@ -11,53 +13,54 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 export class ProfileComponent implements OnInit {
 
   formulario: FormGroup;
-  arrImg: any = [];
-  loading: boolean;
+  user: Cliente;
 
-  constructor(private usuariosService: UsuariosService) {
+  constructor(private usuariosService: UsuariosService, private activatedRoute: ActivatedRoute) {
 
     this.formulario = new FormGroup({
       username: new FormControl(),
       nombre: new FormControl(),
       apellidos: new FormControl(),
-      fecha_registro: new FormControl(),
+      direccion: new FormControl(),
+      nivel: new FormControl(),
       telefono: new FormControl(),
+      email: new FormControl(),
+      edad: new FormControl(),
+      fecha_registro: new FormControl(),
     })
   }
 
-  //indicar la base de la ur
 
 
-  ngOnInit(): void {
+
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(async (params) => {
+      const routeID = params.id;
+
+      this.user = await this.usuariosService.getUser(routeID);
+      console.log(this.user);
+      this.formulario = new FormGroup({
+        username: new FormControl(this.user.username),
+        nombre: new FormControl(this.user.nombre),
+        apellidos: new FormControl(this.user.apellidos),
+        direccion: new FormControl(this.user.direccion),
+        nivel: new FormControl(),
+        telefono: new FormControl(this.user.telefono),
+        email: new FormControl(this.user.email),
+        edad: new FormControl(),
+        fecha_registro: new FormControl(),
+      })
+    })
+
+
+
   }
 
   //formulario del usuario
   onSubmit() {
+    this.formulario.value
+
 
   }
-  //onclick para subir la imagen
-  capturarFile(event) {
 
-    const imgInsert = event.target.files[0];
-    this.arrImg.push(imgInsert);
-  }
-
-  onClick(): any {
-
-    try {
-      this.loading = true;
-      const formularioImg = new FormData();
-      this.arrImg.forEach(img => {
-        formularioImg.append('foto', img)
-      })
-
-
-
-    } catch (event) {
-      this.loading = false;
-      console.log('Error de carga', event)
-    }
-  }
 }
-
-
