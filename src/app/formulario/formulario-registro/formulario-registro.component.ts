@@ -19,7 +19,7 @@ export class FormularioRegistroComponent implements OnInit {
     this.formulario = new FormGroup({
       nombre: new FormControl(),
       apellidos: new FormControl(),
-      user_name: new FormControl(),
+      username: new FormControl(),
       email: new FormControl(),
       password: new FormControl(),
       telefono: new FormControl()
@@ -40,7 +40,8 @@ export class FormularioRegistroComponent implements OnInit {
       if (response['affectedRows'] === 1) {
         Swal.fire('Te has registrado correctamente');
         this.formulario.reset();
-        this.router.navigate['/user'];
+        // REDIRIGIR A LA PAGINA DE USER/ID 
+
       }
 
       if (response['error']) {

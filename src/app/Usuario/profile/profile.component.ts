@@ -78,7 +78,7 @@ export class ProfileComponent implements OnInit {
         Swal.fire('Cambios no guardados', '', 'info')
       }
       //FALTA ACTUALIZAR PAGINA CUANDO DOY BOTON
-      return this.router.navigate([`user/${this.formulario.value.id}`]);
+      //return this.router.navigateByUrl('/user/2')
     })
   }
 

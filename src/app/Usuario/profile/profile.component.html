@@ -18,17 +18,18 @@
                         src="https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Monitor</h5>
-                        <p class="card-text">Llevo dando clases de pádel durante más de 3 años de experiencia</p>
+                        <h5 class="card-title">{{user.username}}</h5>
+                        <p class="card-text">Descripcion</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Nombre: Pedro</li>
-                        <li class="list-group-item">Apellidos: Lopez Sanchez</li>
-                        <li class="list-group-item">Ubicación: Madrid</li>
+                        <li class="list-group-item">Nombre: {{user.nombre}}</li>
+                        <li class="list-group-item">Apellidos: {{user.apellidos}}</li>
+                        <li class="list-group-item">Nivel: {{user.nivel}}</li>
+                        <li class="list-group-item">Ubicación: {{user.direccion}}</li>
                     </ul>
                     <div class="card-body">
-                        <a href="#" class="card-link">Teléfono</a>
-                        <a href="#" class="card-link">Correo electrónico</a>
+                        <a href="#" class="card-link">Cambiar imagen</a>
+                        <a href="#" class="card-link">Cambiar contraseña</a>
                     </div>
                 </div>
             </div>
