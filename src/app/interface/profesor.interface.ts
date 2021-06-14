@@ -1,8 +1,8 @@
-export interface Cliente {
+export interface Profesor {
     id: number;
     experiencia: string;
     precio: number;
-    material_propio: string;
+    material_propio: boolean;
     niveles: number;
     desplazamiento: number;
     rango_desplazamiento: number;
