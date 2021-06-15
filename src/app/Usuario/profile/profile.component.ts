@@ -66,7 +66,7 @@ export class ProfileComponent implements OnInit {
     Swal.fire({
       title: '¿Quieres aplicar los cambios a tu perfil?',
       showDenyButton: true,
-      showCancelButton: true,
+
       confirmButtonText: `Guardar`,
       denyButtonText: `No guardar`,
     }).then(async (result) => {
@@ -77,8 +77,8 @@ export class ProfileComponent implements OnInit {
       } else if (result.isDenied) {
         Swal.fire('Cambios no guardados', '', 'info')
       }
-      //FALTA ACTUALIZAR PAGINA CUANDO DOY BOTON
-      //return this.router.navigateByUrl('/user/2')
+
+      window.location.reload()
     })
   }
 

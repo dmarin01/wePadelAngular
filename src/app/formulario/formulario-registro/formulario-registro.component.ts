@@ -41,6 +41,7 @@ export class FormularioRegistroComponent implements OnInit {
         Swal.fire('Te has registrado correctamente');
         this.formulario.reset();
         // REDIRIGIR A LA PAGINA DE USER/ID 
+        this.router.navigate(['/user', response['insertId']])
 
       }
 

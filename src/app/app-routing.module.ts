@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'register', component: FormularioRegistroComponent },
   { path: 'login', component: FormularioLoginComponent },
-  { path: 'user', component: ProfileComponent },
+  { path: 'profesores', component: ListProfComponent },
   { path: 'user/:id', component: ProfileComponent },
   { path: 'update', component: ProfileComponent },
   { path: 'list', component: ListProfComponent },
