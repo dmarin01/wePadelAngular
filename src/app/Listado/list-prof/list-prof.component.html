@@ -14,7 +14,7 @@
                 <h5>Precio Medio : 15</h5>
                 <h6>Precio Máximo: 40</h6>
                 <p>{{precioActualizado|currency}}</p>
-                <input type="range" min="0" max="40" step="0.5" [value]="this.precio">
+                <input type="range" min="15" max="40" step="0.5" [value]="this.precio">
             </div>
         </div>
         <div class="col-md-12 text-center" *ngIf="(isViewNivel)">
@@ -39,12 +39,16 @@
         </div>
     </div>
     <div class="colum">
-        <div class="row justify-content-center">
-            <div class="col-md4">
-                <div class="card md-4" style="width: 20rem; border-radius: 16px;">
+        <div class="row">
+            <div class="card-group">
+                <div class="card-group" *ngFor="let profesor of arrProfesores"
+                    style="width: 20rem; border-radius: 16px;">
                     <img src="../../../assets/img/logo.png" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">Arturito</h5>
+                        <h5 class="card-title">{{profesor.id}}</h5>
+                        <!--no aparece solo referencia ID-->
+                        <p>Experiencia : <span>{{profesor.experiencia}}</span>años</p>
+                        <p>Precio : <span>{{profesor.precio}}</span> €/hora</p>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's
                             content.</p>

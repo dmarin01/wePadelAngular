@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Profesor } from 'src/app/interface/profesor.interface';
+import { ProfesoresService } from 'src/app/services/profesores.service';
 
 @Component({
   selector: 'app-list-prof',
@@ -23,8 +25,10 @@ export class ListProfComponent implements OnInit {
   arrNivel: any[];
   arrInstalaciones: any[];
 
+  arrProfesores: Profesor[];
 
-  constructor() {
+
+  constructor(private profesoresService: ProfesoresService) {
     this.precio = 0;
     this.isViewPrecio = false;
     this.nivel = '';
@@ -38,9 +42,20 @@ export class ListProfComponent implements OnInit {
     this.nivelSeleccionado = "";
     this.instalacionesSeleccionada = true;
 
+    this.arrProfesores = [];
+
+
   }
 
+
   ngOnInit(): void {
+    this.profesoresService.getAll()
+      .then(response => {
+        console.log(response)
+        this.arrProfesores = response;
+      })
+      .catch(error => console.log(error));
+
   }
   //Eventos
   onInput($event) {
@@ -65,5 +80,8 @@ export class ListProfComponent implements OnInit {
 
     console.log($event.target.dataset.filter);
   }
+
+  //sacar listado de profesores
+
 
 }
