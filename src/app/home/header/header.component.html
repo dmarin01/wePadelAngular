@@ -1,43 +1,27 @@
-<nav class="nav-bar fixed-top navbar-expand-lg navbar-dark p-md-3">
-    <div class="container">
-        <div class="logo">
-            <img src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg" alt="">
+<div class="container">
+    <nav class="nav-bar fixed-top navbar-expand-lg p-md-3">
+        <div class="logo btn">
+            <img src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg">
+            <a href="/"></a>
         </div>
-        <button type="button" class="navbar-toggler" aria-controls="navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="relative">
+            <div class="navbar-nav">
+                <div class="mx-auto">
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="mx-auto"></div>
-            <ul class="navbar-nav breadcrumb">
-                <li class="nav-item">
-                    <a href="#" class="nav-link text-white">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Conócenos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Busca tu profesor</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Blog</a>
-                </li>
-                <div class="buttons">
-                    <a routerLink="/register">Unirse Ahora</a>
-                    <a routerLink="/login">Iniciar sesion</a>
+                    <button type="button" class="btn me-5">Conócenos</button>
+
+                    <button type="button" class="btn px-5 py-3" routerLink="/profesores">Busca tu
+                        profesor</button>
                 </div>
-            </ul>
 
+
+                <button type="button" class="btn btn-outline-success me-3 p-2" routerLink="/register">Unirse
+                    Ahora</button>
+                <button type="button" routerLink="/login" class="btn btn-outline-success p-2 me-5">Iniciar
+                    sesión</button>
+            </div>
         </div>
 
-    </div>
-</nav>
-<!--Banner Image -->
-<main>
-    <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
-        <div class="imagen">
-            <img src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg" alt="">
-        </div>
-    </div>
-</main>
-<!--Main Content-->
+
+    </nav>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  initsession: boolean;
+
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.initsession = false;
+  }
 
   ngOnInit(): void {
+    this.activatedRoute.url.subscribe(url => {
+      this.initsession = (url[0].path === 'login') ? false : true;
+
+    })
   }
 
 }

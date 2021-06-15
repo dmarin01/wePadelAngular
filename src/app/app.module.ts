@@ -13,8 +13,6 @@ import { HeaderComponent } from './home/header/header.component';
 import { FormularioRegistroComponent } from './formulario/formulario-registro/formulario-registro.component';
 import { FormularioLoginComponent } from './formulario/formulario-login/formulario-login.component';
 import { ProfileComponent } from './Usuario/profile/profile.component';
-import { MapaComponent } from './mapa/mapa.component';
-import { AgmCoreModule } from '@agm/core';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarUserComponent } from './Usuario/navbar-user/navbar-user.component';
 import { ListProfComponent } from './Listado/list-prof/list-prof.component'
@@ -29,7 +27,6 @@ import { ListProfComponent } from './Listado/list-prof/list-prof.component'
     FormularioRegistroComponent,
     FormularioLoginComponent,
     ProfileComponent,
-    MapaComponent,
     NavbarComponent,
     NavbarUserComponent,
     ListProfComponent,
@@ -40,9 +37,7 @@ import { ListProfComponent } from './Listado/list-prof/list-prof.component'
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBXoe3vvdGGosbpLVZqUncQDgiW4UAbl58'
-    })
+
   ],
   providers: [],
   bootstrap: [AppComponent]
