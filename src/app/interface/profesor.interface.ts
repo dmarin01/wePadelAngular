@@ -5,6 +5,5 @@ export interface Profesor {
     material_propio: boolean;
     niveles: number;
     desplazamiento: number;
-    rango_desplazamiento: number;
     fk_clientes?: number;
 }

@@ -24,6 +24,7 @@ export class ListProfComponent implements OnInit {
   arrPrecio: any[];
   arrNivel: any[];
   arrInstalaciones: any[];
+
   arrProfesores: Profesor[];
 
 
@@ -41,18 +42,20 @@ export class ListProfComponent implements OnInit {
     this.nivelSeleccionado = "";
     this.instalacionesSeleccionada = true;
 
+    this.arrProfesores = [];
 
 
   }
 
-  ngOnInit(): void {
 
+  ngOnInit(): void {
     this.profesoresService.getAll()
       .then(response => {
-        this.arrProfesores = response;
         console.log(response)
+        this.arrProfesores = response;
       })
-      .catch(error => (error));
+      .catch(error => console.log(error));
+
   }
   //Eventos
   onInput($event) {

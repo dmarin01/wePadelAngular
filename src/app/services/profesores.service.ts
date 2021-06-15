@@ -10,54 +10,21 @@ export class ProfesoresService {
   profesores: Profesor[];
 
   constructor(private httpClient: HttpClient) {
-    this.profesores = [{
-      id: 1,
-      experiencia: "12",
-      precio: 15,
-      material_propio: true,
-      niveles: 3,
-      desplazamiento: 1,
-      rango_desplazamiento: 10,
-      fk_clientes: 2,
-    }, {
-      id: 2,
-      experiencia: "3",
-      precio: 10,
-      material_propio: false,
-      niveles: 1,
-      desplazamiento: 0,
-      rango_desplazamiento: 30,
-      fk_clientes: 1,
-    }, {
-      id: 3,
-      experiencia: "10",
-      precio: 30,
-      material_propio: false,
-      niveles: 4,
-      desplazamiento: 1,
-      rango_desplazamiento: 15,
-      fk_clientes: 3,
-    }, {
-      id: 4,
-      experiencia: "6",
-      precio: 20,
-      material_propio: true,
-      niveles: 3,
-      desplazamiento: 1,
-      rango_desplazamiento: 21,
-      fk_clientes: 4,
-    },]
 
-    this.baseUrl = 'http://localhost:3000';
+
+    this.baseUrl = 'http://localhost:3000/api/profesores';
   }
+  //devolver todos los profesores
   getAll(): Promise<Profesor[]> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        authorization: localStorage.getItem('token')
-      })
-    };
-    return this.httpClient.get<Profesor[]>(this.baseUrl, httpOptions).toPromise();
+    //const httpOptions = {
+    //headers: new HttpHeaders({
+    //authorization: localStorage.getItem('token')
+    //})
+    //};
+    return this.httpClient.get<Profesor[]>(this.baseUrl).toPromise();
   }
+
+  //crear un profesor
 
   create(formValues) {
     const httpOptions = {
@@ -68,53 +35,42 @@ export class ProfesoresService {
     };
     return this.httpClient.post(this.baseUrl, formValues, httpOptions).toPromise();
   }
-  getProfesorByPrice(pPrecio: number): Promise<Profesor[]> {
-    return new Promise<Profesor[]>((resolve, reject) => {
-      const arrProfesorPrice = [];
-      for (let profesor of this.profesores) {
-        if (profesor.precio === pPrecio) {
-          arrProfesorPrice.push(profesor)
-        }
 
-      }
-      resolve(arrProfesorPrice)
-    })
-  }
-  getProfesorByInstalaciones(): Promise<Profesor[]> {
-    return new Promise<Profesor[]>((resolve, reject) => {
-      const arrProfesorInstalaciones = [];
-      for (let profesor of this.profesores) {
-        if (profesor.desplazamiento === 1) {
-          arrProfesorInstalaciones.push(profesor)
-        }
-      }
-      resolve(arrProfesorInstalaciones);
-    })
+  //devolver profesores por precio
+  getProfesorByPrice(pPrecioMin: number, pPrecioMax: number): Promise<Profesor[]> {
+    return this.httpClient.get<Profesor[]>(`this.baseUrl/price/?min=${pPrecioMin}&max=${pPrecioMax}`).toPromise();
+
   }
 
-  getProfesorByNivel(): Promise<Profesor[]> {
-    return new Promise<Profesor[]>((resolve, reject) => {
-      const arrProfNivel1 = [];
-      const arrProfNivel2 = [];
-      const arrProfNivel3 = [];
-      const arrProfNivel4 = [];
-      const arrProfNivel5 = [];
-      for (let profesor of this.profesores) {
-        if (profesor.niveles === 1) {
-          arrProfNivel1.push(profesor)
-        } else if (profesor.niveles === 2) {
-          arrProfNivel2.push(profesor);
-        } else if (profesor.niveles === 3) {
-          arrProfNivel3.push(profesor);
-        } else if (profesor.niveles === 4) {
-          arrProfNivel4.push(profesor);
-        } else {
-          arrProfNivel5.push(profesor);
-        }
-      }
-    })
+  //devolver profesores por instalaciones 1 or 0
+  /**  getProfesorByInstalaciones(): Promise<Profesor[]> {
+     return new Promise<Profesor[]>((resolve, reject) => {
+       const arrProfesorInstalaciones = [];
+       for (let profesor of this.profesores) {
+         if (profesor.desplazamiento === 1) {
+           arrProfesorInstalaciones.push(profesor)
+         }
+       }
+       resolve(arrProfesorInstalaciones);
+     })
+   }*/
 
+
+  // devolver profesores dependiendo del nivel 
+  getProfesorByNivel(pNivelMin, pNivelMax): Promise<Profesor[]> {
+    return this.httpClient.get<Profesor[]>(`this.baseUrl/level/?min=${pNivelMin}&max=${pNivelMax}`).toPromise();
+  }
+
+  getProfByInstal(boolean): Promise<Profesor[]> {
+    return this.httpClient.get<Profesor[]>(`this.baseUrl/instalaciones${1}`).toPromise(); //1 = true
+  }
+  getProfByDesplaz(boolean): Promise<Profesor[]> {
+    return this.httpClient.get<Profesor[]>(`this.baseUrl/desplazamiento${1}`).toPromise(); //1 = true
+  }
+  getProfByMaterial(boolean): Promise<Profesor[]> {
+    return this.httpClient.get<Profesor[]>(`this.baseUrl/material${true}`).toPromise();
   }
 }
+
 
 //crear array de profesores 
