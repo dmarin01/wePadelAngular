@@ -9,13 +9,9 @@
             </ul>
         </div>
         <div class="col-md-12 text-center" *ngIf="(isViewPrecio)">
-            <input (input)=" onInput($event)" [(ngModel)]=this.precio>
-            <div class="col-md-12 text center">
-                <h5>Precio Medio : 15</h5>
-                <h6>Precio Máximo: 40</h6>
-                <p>{{precioActualizado|currency}}</p>
-                <input type="range" min="15" max="40" step="0.5" [value]="this.precio">
-            </div>
+            <input [(ngModel)]='precioMin' placeholder="Precio Minimo">
+            <input [(ngModel)]='precioMax' placeholder="Precio Máximo">
+            <button class="btn btn-primary" (click)="onClickPrecio()">Enviar</button>
         </div>
         <div class="col-md-12 text-center" *ngIf="(isViewNivel)">
             <!--<input (input)=" onInput($event)" [(ngModel)]="nivel">-->
@@ -52,7 +48,7 @@
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's
                             content.</p>
-                        <a href="#" class="btn btn-primary">Mostrar mas</a>
+                        <a href="#" class="btn btn-primary" (click)="onClick(profesor.id)">Mostrar mas</a>
                     </div>
                 </div>
             </div>
