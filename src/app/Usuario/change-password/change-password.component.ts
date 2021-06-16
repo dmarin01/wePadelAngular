@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-change-password',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangePasswordComponent implements OnInit {
 
+  formulario: FormGroup;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+
   }
 
 }
