@@ -32,13 +32,28 @@ export class ProfesoresService {
         authorization: localStorage.getItem('token')
       })
 
+      /**{
+    "experiencia": 9,
+    "precio": 35,
+    "material_propio": 1,
+    "niveles": 5,
+    "desplazamiento":1,
+    "rango_desplazamiento":30,
+    "nombre": "Fernando",
+    "apellidos":"Alonso Ruiz",
+    "email":"FernandoAlonso@gmail.com",
+    "direccion":"Calle Renault, 23",
+    "telefono": 673429509
+} */
+
     };
     return this.httpClient.post(this.baseUrl, formValues, httpOptions).toPromise();
   }
 
   //devolver profesores por precio
   getProfesorByPrice(pPrecioMin: number, pPrecioMax: number): Promise<Profesor[]> {
-    return this.httpClient.get<Profesor[]>(`this.baseUrl/price/?min=${pPrecioMin}&max=${pPrecioMax}`).toPromise();
+    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/price/?min=${pPrecioMin}&max=${pPrecioMax}`).toPromise();
+
 
   }
 
@@ -55,21 +70,25 @@ export class ProfesoresService {
      })
    }*/
 
+  getById(pId: number): Promise<Profesor> {
+    return this.httpClient.get<Profesor>(`${this.baseUrl}/${pId}`).toPromise();
+  }
+
 
   // devolver profesores dependiendo del nivel 
-  getProfesorByNivel(pNivelMin, pNivelMax): Promise<Profesor[]> {
-    return this.httpClient.get<Profesor[]>(`this.baseUrl/level/?min=${pNivelMin}&max=${pNivelMax}`).toPromise();
+  getProfesorByNivel(pNivel): Promise<Profesor[]> {
+    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/level/?min=${pNivel}`).toPromise();
   }
 
   getProfByInstal(boolean): Promise<Profesor[]> {
-    return this.httpClient.get<Profesor[]>(`this.baseUrl/instalaciones${1}`).toPromise(); //1 = true
+    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/instalaciones${1}`).toPromise(); //1 = true
   }
-  getProfByDesplaz(boolean): Promise<Profesor[]> {
-    return this.httpClient.get<Profesor[]>(`this.baseUrl/desplazamiento${1}`).toPromise(); //1 = true
+  /*getProfByDesplaz(boolean): Promise<Profesor[]> {
+    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/desplazamiento${1}`).toPromise(); //1 = true
   }
   getProfByMaterial(boolean): Promise<Profesor[]> {
-    return this.httpClient.get<Profesor[]>(`this.baseUrl/material${true}`).toPromise();
-  }
+    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/material${true}`).toPromise();
+  }*/
 }
 
 

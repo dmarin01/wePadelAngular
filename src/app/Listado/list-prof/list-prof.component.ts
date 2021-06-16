@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Profesor } from 'src/app/interface/profesor.interface';
-import { ProfesoresService } from 'src/app/services/profesores.service';
+import { ProfesoresService } from '../../services/profesores.service';
 
 @Component({
   selector: 'app-list-prof',
@@ -9,7 +9,8 @@ import { ProfesoresService } from 'src/app/services/profesores.service';
   styleUrls: ['./list-prof.component.css']
 })
 export class ListProfComponent implements OnInit {
-  precio: number;
+  precioMin: number;
+  precioMax: number;
   isViewPrecio: boolean;
   nivel: string;
 
@@ -29,7 +30,8 @@ export class ListProfComponent implements OnInit {
 
 
   constructor(private profesoresService: ProfesoresService) {
-    this.precio = 0;
+    this.precioMin = 0;
+    this.precioMax = 0;
     this.isViewPrecio = false;
     this.nivel = '';
 
@@ -49,6 +51,7 @@ export class ListProfComponent implements OnInit {
 
 
   ngOnInit(): void {
+    //listado de todos los profesores
     this.profesoresService.getAll()
       .then(response => {
         console.log(response)
@@ -56,19 +59,14 @@ export class ListProfComponent implements OnInit {
       })
       .catch(error => console.log(error));
 
+
+
+
   }
+
   //Eventos
-  onInput($event) {
-    this.precioSeleccionado = this.precio;
-  }
-  onInputNivel($event) {
-    this.nivelSeleccionado = this.nivel;
-    console.log(this.nivelSeleccionado);
-  }
-  onInputInstalaciones($event) {
-    this.instalacionesSeleccionada = this.instalaciones
-    console.log(this.instalacionesSeleccionada);
-  }
+
+
 
 
   //aparezca por pantalla
@@ -81,7 +79,55 @@ export class ListProfComponent implements OnInit {
     console.log($event.target.dataset.filter);
   }
 
-  //sacar listado de profesores
+
+  async onClick(profesorId) {
+    const profesor = await this.profesoresService.getById(profesorId);
+  } catch(error) {
+    console.log(error);
+  }
+
+
+
+  async onClickPrecio() {
+    this.arrProfesores = await this.profesoresService.getProfesorByPrice(this.precioMin, this.precioMax)
+  }
+
+  async onInputNivel($event) {
+    this.arrProfesores = await this.profesoresService.getProfesorByNivel(this.nivel)
+  }
+
+  async onInputInstalaciones($event) {
+    this.arrProfesores = await this.profesoresService.getProfByInstal(this.instalaciones);
+  }
+  //peticion get por nivel
+
+
+
+
+
+
+  /*this.profesoresService.getProfesorByNivel(hola, pepe)
+  .then(response => {
+    this.arrProfesores
+  })
+
+
+//Peticion Get por instalaciones
+this.profesoresService.getProfByInstal(true)
+  .then(response => {
+    this.arrProfesores = response;
+  })
+  .catch(error => console.log(error));
+
+//peticion get por precio
+
+this.profesoresService.getProfesorByPrice(pPrecioMin, pPrecioMax)
+  .then(response => {
+    console.log(response)
+    this.arrProfesores = response;
+  })
+  .catch(error => console.log(error));*/
+
 
 
 }
