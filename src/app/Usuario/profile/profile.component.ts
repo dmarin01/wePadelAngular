@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
 
   formulario: FormGroup;
   user: Cliente;
+  files;
 
   constructor(private usuariosService: UsuariosService, private activatedRoute: ActivatedRoute, private router: Router) {
 
@@ -81,5 +82,15 @@ export class ProfileComponent implements OnInit {
       window.location.reload()
     })
   }
+
+  /* 
+    upImg() {
+      let fd = new FormData();
+      fd.append('imagen', this.files[0]);
+  
+      this.usuariosService.create(fd).then(result => {
+        this.router.navigate(['']);
+      })
+    } */
 
 }

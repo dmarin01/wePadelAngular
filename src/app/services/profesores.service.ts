@@ -38,7 +38,7 @@ export class ProfesoresService {
 
   //devolver profesores por precio
   getProfesorByPrice(pPrecioMin: number, pPrecioMax: number): Promise<Profesor[]> {
-    return this.httpClient.get<Profesor[]>(`this.baseUrl/price/?min=${pPrecioMin}&max=${pPrecioMax}`).toPromise();
+    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/price/?min=${pPrecioMin}&max=${pPrecioMax}`).toPromise();
 
   }
 
