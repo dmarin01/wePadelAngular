@@ -17,7 +17,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarUserComponent } from './Usuario/navbar-user/navbar-user.component';
 import { ListProfComponent } from './Listado/list-prof/list-prof.component';
 import { ChangePasswordComponent } from './Usuario/change-password/change-password.component';
-import { ChangeImgProfileComponent } from './Usuario/change-img-profile/change-img-profile.component'
+import { ChangeImgProfileComponent } from './Usuario/change-img-profile/change-img-profile.component';
+import { FormularioProfesorComponent } from './Usuario/formulario-profesor/formulario-profesor.component';
+import { AyudaComponent } from './ayuda/ayuda.component'
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { ChangeImgProfileComponent } from './Usuario/change-img-profile/change-i
     ListProfComponent,
     ChangePasswordComponent,
     ChangeImgProfileComponent,
+    FormularioProfesorComponent,
+    AyudaComponent,
   ],
   imports: [
     BrowserModule,

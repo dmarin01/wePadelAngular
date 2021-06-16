@@ -32,19 +32,6 @@ export class ProfesoresService {
         authorization: localStorage.getItem('token')
       })
 
-      /**{
-    "experiencia": 9,
-    "precio": 35,
-    "material_propio": 1,
-    "niveles": 5,
-    "desplazamiento":1,
-    "rango_desplazamiento":30,
-    "nombre": "Fernando",
-    "apellidos":"Alonso Ruiz",
-    "email":"FernandoAlonso@gmail.com",
-    "direccion":"Calle Renault, 23",
-    "telefono": 673429509
-} */
 
     };
     return this.httpClient.post(this.baseUrl, formValues, httpOptions).toPromise();
@@ -57,18 +44,6 @@ export class ProfesoresService {
 
   }
 
-  //devolver profesores por instalaciones 1 or 0
-  /**  getProfesorByInstalaciones(): Promise<Profesor[]> {
-     return new Promise<Profesor[]>((resolve, reject) => {
-       const arrProfesorInstalaciones = [];
-       for (let profesor of this.profesores) {
-         if (profesor.desplazamiento === 1) {
-           arrProfesorInstalaciones.push(profesor)
-         }
-       }
-       resolve(arrProfesorInstalaciones);
-     })
-   }*/
 
   getById(pId: number): Promise<Profesor> {
     return this.httpClient.get<Profesor>(`${this.baseUrl}/${pId}`).toPromise();
@@ -89,6 +64,10 @@ export class ProfesoresService {
   getProfByMaterial(boolean): Promise<Profesor[]> {
     return this.httpClient.get<Profesor[]>(`${this.baseUrl}/material${true}`).toPromise();
   }*/
+
+  formteacher(formValues: any) {
+    return this.httpClient.post(`${this.baseUrl}/formteacher`, formValues).toPromise();
+  }
 }
 
 

@@ -30,7 +30,7 @@ export class FormularioRegistroComponent implements OnInit {
   }
   async onSubmit() {
     // this.formulario.value
-    console.log(this.formulario.value);
+    console.log(this.formulario.value.id);
 
     try {
       const response = await this.usuariosService.registerUser(this.formulario.value);
