@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './home/footer/footer.component';
-import { MainComponent } from './Home/main/main.component';
+
 import { HeaderComponent } from './home/header/header.component';
 import { FormularioRegistroComponent } from './formulario/formulario-registro/formulario-registro.component';
 import { FormularioLoginComponent } from './formulario/formulario-login/formulario-login.component';
@@ -23,7 +23,6 @@ import { ChangeImgProfileComponent } from './Usuario/change-img-profile/change-i
   declarations: [
     AppComponent,
     HomeComponent,
-    MainComponent,
     FooterComponent,
     HeaderComponent,
     FormularioRegistroComponent,
