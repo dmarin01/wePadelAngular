@@ -4,6 +4,8 @@ import { FormularioLoginComponent } from './formulario/formulario-login/formular
 import { FormularioRegistroComponent } from './formulario/formulario-registro/formulario-registro.component';
 import { HomeComponent } from './home/home.component';
 import { ListProfComponent } from './Listado/list-prof/list-prof.component';
+import { ChangeImgProfileComponent } from './Usuario/change-img-profile/change-img-profile.component';
+import { ChangePasswordComponent } from './Usuario/change-password/change-password.component';
 import { ProfileComponent } from './Usuario/profile/profile.component';
 
 const routes: Routes = [
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'user/:id', component: ProfileComponent },
   { path: 'update', component: ProfileComponent },
   { path: 'list', component: ListProfComponent },
+  { path: 'changepw', component: ChangePasswordComponent },
+  { path: 'changeimg', component: ChangeImgProfileComponent },
   { path: '**', component: HomeComponent },
 ];
 

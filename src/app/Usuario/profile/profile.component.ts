@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
   user: Cliente;
   files;
 
-  constructor(private usuariosService: UsuariosService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private usuariosService: UsuariosService, private activatedRoute: ActivatedRoute) {
 
     this.formulario = new FormGroup({
       id: new FormControl(),
@@ -83,14 +83,6 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  /* 
-    upImg() {
-      let fd = new FormData();
-      fd.append('imagen', this.files[0]);
-  
-      this.usuariosService.create(fd).then(result => {
-        this.router.navigate(['']);
-      })
-    } */
+
 
 }
