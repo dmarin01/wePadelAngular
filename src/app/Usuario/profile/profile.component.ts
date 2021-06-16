@@ -15,8 +15,9 @@ export class ProfileComponent implements OnInit {
 
   formulario: FormGroup;
   user: Cliente;
+  files;
 
-  constructor(private usuariosService: UsuariosService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private usuariosService: UsuariosService, private activatedRoute: ActivatedRoute) {
 
     this.formulario = new FormGroup({
       id: new FormControl(),
@@ -81,5 +82,7 @@ export class ProfileComponent implements OnInit {
       window.location.reload()
     })
   }
+
+
 
 }

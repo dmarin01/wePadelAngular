@@ -15,7 +15,9 @@ import { FormularioLoginComponent } from './formulario/formulario-login/formular
 import { ProfileComponent } from './Usuario/profile/profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarUserComponent } from './Usuario/navbar-user/navbar-user.component';
-import { ListProfComponent } from './Listado/list-prof/list-prof.component'
+import { ListProfComponent } from './Listado/list-prof/list-prof.component';
+import { ChangePasswordComponent } from './Usuario/change-password/change-password.component';
+import { ChangeImgProfileComponent } from './Usuario/change-img-profile/change-img-profile.component'
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { ListProfComponent } from './Listado/list-prof/list-prof.component'
     NavbarComponent,
     NavbarUserComponent,
     ListProfComponent,
+    ChangePasswordComponent,
+    ChangeImgProfileComponent,
   ],
   imports: [
     BrowserModule,
