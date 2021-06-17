@@ -1,7 +1,43 @@
-.wrapper {
-    background-image: url('../../../assets/img/fondo_nav.jpg');
-    
-    background-size: cover;
-
+.wrapper{
+  background-color: white;
 }
+
+.logo{
+    width: 7em;
+    height: 3em;
+    margin-left: 4em;
+    margin-top: -3em;
+}
+.logo img{
+    width: 100%;
+}
+
+button{
+    margin-top: -30px
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #000000;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #25eba9;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 

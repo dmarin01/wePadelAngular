@@ -39,7 +39,10 @@ export class ProfesoresService {
 
   //devolver profesores por precio
   getProfesorByPrice(pPrecioMin: number, pPrecioMax: number): Promise<Profesor[]> {
-    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/price/?min=${pPrecioMin}&max=${pPrecioMax}`).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
+    }
+    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/price/?min=${pPrecioMin}&max=${pPrecioMax}`, httpOptions).toPromise();
 
 
   }
@@ -51,13 +54,26 @@ export class ProfesoresService {
 
 
   // devolver profesores dependiendo del nivel 
-  getProfesorByNivel(pNivel): Promise<Profesor[]> {
-    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/level/?min=${pNivel}`).toPromise();
+  getProfesorByNivel(pNivel: number): Promise<Profesor[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
+    }
+    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/level/${pNivel}`, httpOptions).toPromise();
   }
 
-  getProfByInstal(boolean): Promise<Profesor[]> {
-    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/instalaciones${1}`).toPromise(); //1 = true
+  //devuelve el profesor si tiene instalacion para dar clase
+  getProfByInstal(boolean: number): Promise<Profesor[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
+    }
+    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/instalations/${boolean}`, httpOptions).toPromise();
   }
+
+  formteacher(formValues: any) {
+    return this.httpClient.post(`${this.baseUrl}/formteacher`, formValues).toPromise();
+  }
+
+
   /*getProfByDesplaz(boolean): Promise<Profesor[]> {
     return this.httpClient.get<Profesor[]>(`${this.baseUrl}/desplazamiento${1}`).toPromise(); //1 = true
   }
@@ -65,9 +81,7 @@ export class ProfesoresService {
     return this.httpClient.get<Profesor[]>(`${this.baseUrl}/material${true}`).toPromise();
   }*/
 
-  formteacher(formValues: any) {
-    return this.httpClient.post(`${this.baseUrl}/formteacher`, formValues).toPromise();
-  }
+
 }
 
 

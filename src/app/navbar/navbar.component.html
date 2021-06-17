@@ -1,29 +1,43 @@
-<div class="wrapper">
-    <div class="container">
-        <nav class="navbar row">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                    <img src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg" alt="" width="110"
-                        height="80" class="d-inline-block align-text-top">
-                </a>
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-outline-dark me-4" routerLink="/profesores">Buscar tu
-                            profesor</button>
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-outline-info me-4" routerLink="/help">Ayuda</button>
-                    </li>
-                    <li class="nav-item" *ngIf="initsession">
-                        <button type="button" class="btn btn-outline-success me-4" routerLink="/login">Iniciar
-                            sesión</button>
-                    </li>
-                    <li class="nav-item" *ngIf="!initsession">
-                        <button type="button" class="btn btn-outline-success me-4"
-                            routerLink="/register">Registrarme</button>
-                    </li>
-                </ul>
+<nav class="navbar navbar-expand-lg my-5">
+    <div class="container-fluid">
+        <a class="navbar-brand logo btn" routerLink="/home"><img
+                src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div id="webapp_cover" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div id="menu_button">
+                <input type="checkbox" id="menu_checkbox">
+                <label for="menu_checkbox" id="menu_label">
+                    <div id="menu_text_bar"></div>
+                </label>
             </div>
-        </nav>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-3 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link mt-2 hover-underline-animation me-5 p-2" routerLink="/profesores">Busca tu
+                        profesor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mt-2 hover-underline-animation me-5 p-2" routerLink="/register"
+                        routerLink='/help'><i class="my-5"></i>Ayuda</a>
+                </li>
+
+
+
+
+                <li class="nav-item me-5" *ngIf="!initsession">
+                    <a class="nav-link mt-2 hover-underline-animation me-3 p-2" routerLink="/register">Unirse ahora</a>
+                </li>
+                <li class="nav-item" *ngIf="initsession">
+                    <a class="nav-link mt-2 mb-2 hover-underline-animation p-2 me-5 " routerLink='/login'><i
+                            class="fas fa-user-circle me-2"></i>Inicia
+                        sesión</a>
+                </li>
+
+            </ul>
+        </div>
     </div>
-</div>
+</nav>

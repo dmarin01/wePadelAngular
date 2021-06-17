@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'list', component: ListProfComponent, canActivate: [GuardGuard] },
   { path: 'changepw', component: ChangePasswordComponent, canActivate: [GuardGuard] },
   { path: 'changeimg', component: ChangeImgProfileComponent, canActivate: [GuardGuard] },
-  { path: 'formteacher', component: FormularioProfesorComponent, canActivate: [GuardGuard] },
+  { path: 'formteacher/:id', component: FormularioProfesorComponent, canActivate: [GuardGuard] },
   { path: 'help', component: AyudaComponent },
   { path: '**', component: HomeComponent },
 ];
