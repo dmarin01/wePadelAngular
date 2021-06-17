@@ -19,11 +19,13 @@ export class UsuariosService {
 
   //formulario component
   registerUser(formValues: Usuario) {
+
     formValues.fecha_inscripcion = new Date();
     return this.httpClient.post(`${this.baseUrl}/api/usuarios/register`, formValues).toPromise();
   }
 
   loginUser(formValues: Login) {
+
     return this.httpClient.post(`${this.baseUrl}/api/usuarios/login`, formValues).toPromise();
   }
 
@@ -37,12 +39,17 @@ export class UsuariosService {
   }
 
   updateUser(formValues: Cliente) {
-
-    return this.httpClient.put(`${this.baseUrl}/api/clientes/update/${formValues.id}`, formValues).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
+    }
+    return this.httpClient.put(`${this.baseUrl}/api/clientes/update/${formValues.id}`, formValues, httpOptions).toPromise();
   }
 
   upImg(fd: FormData) {
-    return this.httpClient.post(`${this.baseUrl}/api/clientes/upimg`, fd).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
+    }
+    return this.httpClient.post(`${this.baseUrl}/api/clientes/upimg`, fd, httpOptions).toPromise();
   }
 
 }
