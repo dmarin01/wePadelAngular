@@ -13,7 +13,8 @@ nav{
 .logo{
     width: 7em;
     height: 3em;
-    margin-left: 10em;
+    margin-left: 4em;
+    margin-top: -1em;
 }
 .logo img{
     width: 100%;
@@ -30,4 +31,19 @@ button{
 .porsi{
     position: absolute;
     right: 8em;
+}
+.navbar{
+    background-color: rgb(49, 211, 233);
+}
+.logo img{
+    width: 25%;
+    height: 25%;
+}
+.navbar ul li{
+    font-size: 1.2em;
+    border-radius: 10px;
+}
+.fas{
+    padding-right: 10px;
+    font-size: 1.3em;
 } */

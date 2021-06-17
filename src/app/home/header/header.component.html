@@ -1,27 +1,67 @@
-<div class="container">
+<!-- <div class="container">
+
     <nav class="nav-bar fixed-top navbar-expand-lg p-md-3">
-        <div class="logo btn">
-            <img src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg">
-            <a href="/"></a>
-        </div>
-        <div class="relative">
-            <div class="navbar-nav">
-                <div class="mx-auto">
+        <div class="container-fluid">
+            <div class="logo btn">
+                <img src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg">
+                <a href="/"></a>
+            </div>
+            <div class="relative">
+                <div class="navbar-nav">
+                    <div class="mx-auto">
 
-                    <button type="button" class="btn me-5">Conócenos</button>
+                        <button type="button" class="btn me-5">Conócenos</button>
 
-                    <button type="button" class="btn px-5 py-3" routerLink="/profesores">Busca tu
-                        profesor</button>
+                        <button type="button" class="btn px-5 py-3" routerLink="/profesores">Busca tu
+                            profesor</button>
+                    </div>
+
+
+                    <button type="button" class="btn btn-outline-success me-3 p-2" routerLink="/register">Unirse
+                        Ahora</button>
+                    <button type="button" routerLink="/login" class="btn btn-outline-success p-2 me-5">Iniciar
+                        sesión</button>
                 </div>
+            </div>
 
+        </div>
+    </nav>
+</div> -->
 
-                <button type="button" class="btn btn-outline-success me-3 p-2" routerLink="/register">Unirse
-                    Ahora</button>
-                <button type="button" routerLink="/login" class="btn btn-outline-success p-2 me-5">Iniciar
-                    sesión</button>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand logo" href="#"><img
+                src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div id="webapp_cover" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div id="menu_button">
+                <input type="checkbox" id="menu_checkbox">
+                <label for="menu_checkbox" id="menu_label">
+                    <div id="menu_text_bar"></div>
+                </label>
             </div>
         </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link me-2 btn px-5 py-3" routerLink="/profesores">Busca tu profesor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-2 btn px-5 py-3" routerLink='/help'><i class="my-5"></i>Ayuda</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link mt-2 mb-2 btn btn-outline-success p-2 me-5 " routerLink='/login'><i
+                            class="fas fa-user-circle me-2 "></i>Inicia
+                        sesión</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link mt-2  btn btn-outline-success me-3 p-2" routerLink="/register">Unirse ahora</a>
+                </li>
 
-
-    </nav>
-</div>
+            </ul>
+        </div>
+    </div>
+</nav>

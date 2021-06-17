@@ -12,7 +12,7 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 export class ChangeImgProfileComponent implements OnInit {
 
   formulario: FormGroup;
-  files: any;
+  files;
 
   constructor(private usuarioService: UsuariosService, private router: Router) {
     this.formulario = new FormGroup({
@@ -34,8 +34,13 @@ export class ChangeImgProfileComponent implements OnInit {
     this.usuarioService.upImg(fd).then(result => {
       console.log(result);
 
-      this.router.navigate(['/user', result['id']]);
+      this.router.navigate(['/user', result['token']]);
     })
 
   }
+
+  onChange($event) {
+    this.files = $event.target.files;
+  }
+
 }
