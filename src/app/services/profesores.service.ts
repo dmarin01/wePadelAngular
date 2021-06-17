@@ -16,12 +16,12 @@ export class ProfesoresService {
   }
   //devolver todos los profesores
   getAll(): Promise<Profesor[]> {
-    //const httpOptions = {
-    //headers: new HttpHeaders({
-    //authorization: localStorage.getItem('token')
-    //})
-    //};
-    return this.httpClient.get<Profesor[]>(this.baseUrl).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        authorization: localStorage.getItem('token')
+      })
+    };
+    return this.httpClient.get<Profesor[]>(this.baseUrl, httpOptions).toPromise();
   }
 
   //crear un profesor

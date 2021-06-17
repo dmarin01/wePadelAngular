@@ -1,24 +1,27 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
 
 
 nav{
     background-color: white;
-    height: 8em;
+    box-shadow: 1px 1px 10px #aaa;
+
 }
 
-.logo{
-    width: 7em;
-    height: 3em;
-    margin-left: 4em;
-    margin-top: -2em;
+.danimetocaloscojones{
+  margin-top: 10em;
 }
-.logo img{
-    width: 100%;
+
+
+
+.logomenu {
+  width: 8em;
+  margin-left: 2em;
 }
+
+.logomenu img{
+  width: 100%;
+}
+
+
 
 button{
     margin-top: -30px

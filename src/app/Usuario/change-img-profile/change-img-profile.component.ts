@@ -29,12 +29,15 @@ export class ChangeImgProfileComponent implements OnInit {
 
     let fd = new FormData();
 
+
     fd.append('img', this.files[0]);
+
+
 
     this.usuarioService.upImg(fd).then(result => {
       console.log(result);
 
-      this.router.navigate(['/user', result['token']]);
+      this.router.navigate(['/user', result['id']]);
     })
 
   }

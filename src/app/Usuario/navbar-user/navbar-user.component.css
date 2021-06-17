@@ -1,20 +1,19 @@
-.wrapper{
-  background-color: white;
+nav{
+    background-color: white;
+    box-shadow: 1px 1px 10px #aaa;
+
 }
 
-.logo{
-    width: 7em;
-    height: 3em;
-    margin-left: 4em;
-    margin-top: -3em;
-}
-.logo img{
-    width: 100%;
+.logomenu {
+  width: 8em;
+  margin-left: 2em;
 }
 
-button{
-    margin-top: -30px
+.logomenu img{
+  width: 100%;
 }
+
+
 
 .hover-underline-animation {
   display: inline-block;
@@ -38,6 +37,10 @@ button{
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.danimetocaloscojones{
+  margin-top: 10em;
 }
 
 

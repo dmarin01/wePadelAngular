@@ -1,17 +1,16 @@
 nav{
     background-color: white;
-   
+    box-shadow: 1px 1px 10px #aaa;
 
 }
 
-.logo{
-    width: 7em;
-    height: 3em;
-    margin-left: 4em;
-    margin-top: -3em;
+.logomenu {
+  width: 8em;
+  margin-left: 2em;
 }
-.logo img{
-    width: 100%;
+
+.logomenu img{
+  width: 100%;
 }
 
 button{
@@ -40,5 +39,9 @@ button{
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.danimetocaloscojones{
+  margin-top: 10em;
 }
 

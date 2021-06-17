@@ -5,18 +5,17 @@
         <div class="row">
             <div class="col-lg-5 col-sm-12 mt-5 ps-5">
                 <div class="card" style="width: 18rem;">
-                    <img style="border-radius: 50%; width: 10rem; margin: 1rem auto;"
-                        src="https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg"
+                    <img style="border-radius: 50%; width: 10rem; margin: 1rem auto;" [src]="user?.img_cliente"
                         class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{user.username}}</h5>
+                        <h5 class="card-title">{{user?.username}}</h5>
                         <p class="card-text">Descripcion</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Nombre: {{user.nombre}}</li>
-                        <li class="list-group-item">Apellidos: {{user.apellidos}}</li>
-                        <li class="list-group-item">Nivel: {{user.nivel}}</li>
-                        <li class="list-group-item">Ubicación: {{user.direccion}}</li>
+                        <li class="list-group-item">Nombre: {{user?.nombre}}</li>
+                        <li class="list-group-item">Apellidos: {{user?.apellidos}}</li>
+                        <li class="list-group-item">Nivel: {{user?.nivel}}</li>
+                        <li class="list-group-item">Ubicación: {{user?.direccion}}</li>
                     </ul>
                     <div class="card-body">
                         <div class="row justify-content-evenly">

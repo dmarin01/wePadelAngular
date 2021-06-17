@@ -1,19 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand logo"><img src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg"
-                alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        </button>
-        <div id="webapp_cover" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="logomenu" routerLink="/home">
+            <a class="navbar-brand logomenu btn"><img
+                    src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg" alt=""></a>
+        </div>
+
+        <button id="webapp_cover" class="navbar-toggler" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <div id="menu_button">
-                <input type="checkbox" id="menu_checkbox">
+                <span>
+                    <i class="fas fa-bars fa-1x"></i></span>
                 <label for="menu_checkbox" id="menu_label">
                     <div id="menu_text_bar"></div>
                 </label>
             </div>
-        </div>
+        </button>
+
+
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mt-3 mb-lg-0">
                 <li class="nav-item">
@@ -29,7 +34,7 @@
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link mt-2 mb-2 hover-underline-animation p-2 me-5 " routerLink='/login'><i
-                            class="fas fa-user-circle me-2"></i>Inicia
+                            class="fas fa-user-circle me-2"></i>Iniciar
                         sesión</a>
                 </li>
 
@@ -37,3 +42,5 @@
         </div>
     </div>
 </nav>
+
+<div class="danimetocaloscojones"></div>

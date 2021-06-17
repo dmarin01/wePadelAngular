@@ -46,10 +46,11 @@ export class UsuariosService {
   }
 
   upImg(fd: FormData) {
+
     const httpOptions = {
       headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
     }
-    return this.httpClient.post(`${this.baseUrl}/api/clientes/upimg`, fd, httpOptions).toPromise();
+    return this.httpClient.put(`${this.baseUrl}/api/clientes/upimg`, fd, httpOptions).toPromise();
   }
 
 }
