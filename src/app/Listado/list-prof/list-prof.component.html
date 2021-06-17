@@ -1,3 +1,5 @@
+<app-navbar-user></app-navbar-user>
+
 <!--NAVBAR-->
 <div class="container">
     <div class="row">
@@ -9,7 +11,7 @@
             </ul>
         </div>
         <div class="col-md-12 text-center" *ngIf="(isViewPrecio)">
-            <input [(ngModel)]='precioMin' placeholder="Precio Minimo">
+            <input [(ngModel)]='precioMin' placeholder="Precio Mínimo">
             <input [(ngModel)]='precioMax' placeholder="Precio Máximo">
             <button class="btn btn-primary" (click)="onClickPrecio()">Enviar</button>
         </div>
@@ -29,8 +31,8 @@
         <div class="col-md-12 text-center" *ngIf="(isViewInstalaciones)">
             <select name="instalaciones" id="instalaciones" (change)="onInputInstalaciones($event)"
                 [(ngModel)]="instalaciones">
-                <option value="true">Si</option>
-                <option value="true">No</option>
+                <option value="1">Si</option>
+                <option value="0">No</option>
             </select>
         </div>
     </div>

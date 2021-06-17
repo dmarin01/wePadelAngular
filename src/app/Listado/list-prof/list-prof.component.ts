@@ -81,7 +81,8 @@ export class ListProfComponent implements OnInit {
 
 
   async onClick(profesorId) {
-    const profesor = await this.profesoresService.getById(profesorId);
+    return await this.profesoresService.getById(profesorId);
+
   } catch(error) {
     console.log(error);
   }
@@ -93,11 +94,12 @@ export class ListProfComponent implements OnInit {
   }
 
   async onInputNivel($event) {
-    this.arrProfesores = await this.profesoresService.getProfesorByNivel(this.nivel)
+    this.arrProfesores = await this.profesoresService.getProfesorByNivel($event.target.value)
   }
 
   async onInputInstalaciones($event) {
-    this.arrProfesores = await this.profesoresService.getProfByInstal(this.instalaciones);
+
+    this.arrProfesores = await this.profesoresService.getProfByInstal($event.target.value);
   }
   //peticion get por nivel
 
