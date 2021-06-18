@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
+declare var Swal;
+
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
@@ -17,6 +19,10 @@ export class ChangePasswordComponent implements OnInit {
 
   onSubmit() {
 
+
+
+
+    Swal.fire('La contraseña actualizada')
   }
 
 }

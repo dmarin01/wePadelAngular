@@ -9,11 +9,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './home/footer/footer.component';
 
-import { HeaderComponent } from './home/header/header.component';
+
 import { FormularioRegistroComponent } from './formulario/formulario-registro/formulario-registro.component';
 import { FormularioLoginComponent } from './formulario/formulario-login/formulario-login.component';
 import { ProfileComponent } from './Usuario/profile/profile.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarUserComponent } from './Usuario/navbar-user/navbar-user.component';
 import { ListProfComponent } from './Listado/list-prof/list-prof.component';
 import { ChangePasswordComponent } from './Usuario/change-password/change-password.component';
@@ -26,11 +25,11 @@ import { AyudaComponent } from './ayuda/ayuda.component'
     AppComponent,
     HomeComponent,
     FooterComponent,
-    HeaderComponent,
+
     FormularioRegistroComponent,
     FormularioLoginComponent,
     ProfileComponent,
-    NavbarComponent,
+
     NavbarUserComponent,
     ListProfComponent,
     ChangePasswordComponent,

@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
+declare var Swal;
+
 @Component({
   selector: 'app-change-img-profile',
   templateUrl: './change-img-profile.component.html',
@@ -40,10 +42,13 @@ export class ChangeImgProfileComponent implements OnInit {
       this.router.navigate(['/user', result['id']]);
     })
 
+    Swal.fire('Foto de perfil actualizada')
   }
 
   onChange($event) {
     this.files = $event.target.files;
+
+
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="wrapper">
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="btn navbar-brand logomenu" routerLink="/home"><img
+            <a class="btn navbar-brand logomenu" [routerLink]="['/home', id]"><img
                     src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -29,13 +29,31 @@
                     </li>
 
 
+                    <li class="nav-item">
+                        <a class="nav-link hover-underline-animation me-5" routerLink="/profesores">Busca tu
+                            profesor</a>
+                    </li>
 
 
-                    <li class="nav-item me-5">
+                    <li class="nav-item me-5" *ngIf="!usuariosServices.isloged()">
+                        <a class=" nav-link hover-underline-animation me-3" routerLink="/register">Unirse
+                            ahora</a>
+                    </li>
+                    <li class="nav-item me-5" *ngIf="!usuariosServices.isloged()">
+                        <a class="nav-link mb-2 hover-underline-animation me-5 " routerLink='/login'><i
+                                class="fas fa-user-circle me-2"></i>Iniciar
+                            sesión</a>
+                    </li>
+
+
+
+
+
+                    <li class="nav-item me-5" *ngIf="usuariosServices.isloged()">
                         <a class="nav-link hover-underline-animation me-3 " [routerLink]="['/user', id]">Mi
                             perfil</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" *ngIf="usuariosServices.isloged()">
                         <a class="nav-link mb-2 hover-underline-animation  me-5 " (click)="onClick()"><i
                                 class="fas fa-user-circle me-2"></i>Desconectar</a>
                     </li>
