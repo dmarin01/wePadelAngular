@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
@@ -17,16 +17,48 @@ export class FormularioRegistroComponent implements OnInit {
   constructor(private usuariosService: UsuariosService, private router: Router) {
 
     this.formulario = new FormGroup({
-      nombre: new FormControl(),
-      apellidos: new FormControl(),
-      username: new FormControl(),
-      email: new FormControl(),
-      password: new FormControl(),
-      telefono: new FormControl()
+      nombre: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3)
+      ]),
+      apellidos: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(20)
+      ]),
+      username: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(25)
+      ]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
+      ]),
+      telefono: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(13)
+      ])
     });
   }
 
   ngOnInit(): void {
+  }
+  checkControl(controlName, validatorName) {
+    return this.formulario.get(controlName).hasError(validatorName) && this.formulario.get(controlName).touched
+  }
+
+  passwordRepeatValidator(form) {
+    const passwordValue = form.get('password').value;
+    const passwordRepeatValue = form.get('repite_password').value;
+
+    if (passwordValue === passwordRepeatValue) {
+      return null;
+    } else {
+      return { passwordrepeatvalidator: true };
+    }
   }
   async onSubmit() {
     // this.formulario.value

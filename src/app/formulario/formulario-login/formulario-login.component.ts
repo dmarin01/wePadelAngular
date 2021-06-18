@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
@@ -15,8 +15,12 @@ export class FormularioLoginComponent implements OnInit {
 
   constructor(private usuariosServices: UsuariosService, private router: Router) {
     this.formulario = new FormGroup({
-      email: new FormControl(),
-      password: new FormControl()
+      email: new FormControl('', [
+        Validators.pattern(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)
+      ]),
+      password: new FormControl('', [
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
+      ])
     })
   }
 
