@@ -40,7 +40,7 @@ export class ProfileComponent implements OnInit {
     this.activatedRoute.params.subscribe(async (params) => {
       const routeID = params.id;
 
-      this.user = await this.usuariosService.getUser(routeID);
+      this.user = await this.usuariosService.getUser();
       console.log(this.user);
       this.formulario = new FormGroup({
         id: new FormControl(this.user.id),

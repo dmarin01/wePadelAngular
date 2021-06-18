@@ -31,11 +31,11 @@ export class UsuariosService {
 
 
   //profile component
-  getUser(id): Promise<Cliente> {
+  getUser(): Promise<Cliente> {
     const httpOptions = {
       headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
     }
-    return this.httpClient.get<Cliente>(`${this.baseUrl}/api/clientes/user/${id}`, httpOptions).toPromise();
+    return this.httpClient.get<Cliente>(`${this.baseUrl}/api/clientes/user/`, httpOptions).toPromise();
   }
 
   updateUser(formValues: Cliente) {
@@ -51,6 +51,15 @@ export class UsuariosService {
       headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
     }
     return this.httpClient.put(`${this.baseUrl}/api/clientes/upimg`, fd, httpOptions).toPromise();
+  }
+
+
+  isloged() {
+    if (localStorage.getItem('token') === null) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
 }

@@ -41,11 +41,11 @@
             <div class="card-group">
                 <div class="card-group" *ngFor="let profesor of arrProfesores"
                     style="width: 20rem; border-radius: 16px;">
-                    <img src="../../../assets/img/logo.png" class="card-img-top">
+                    <img [src]="profesor.img_cliente" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">{{profesor.id}}</h5>
+                        <h5 class="card-title">{{profesor.nombre}} {{profesor.apellidos}}</h5>
                         <!--no aparece solo referencia ID-->
-                        <p>Experiencia : <span>{{profesor.experiencia}}</span>años</p>
+                        <p>Experiencia : <span>{{profesor.experiencia}} </span>años</p>
                         <p>Precio : <span>{{profesor.precio}}</span> €/hora</p>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's

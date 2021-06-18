@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsuariosService } from 'src/app/services/usuarios.service';
+
+
+declare var Swal;
 
 @Component({
   selector: 'app-navbar-user',
@@ -7,21 +11,58 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./navbar-user.component.css']
 })
 export class NavbarUserComponent implements OnInit {
+
+
   id: number;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public usuariosServices: UsuariosService) { }
 
-  ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
-      this.id = parseInt(params.id)
-    })
+  async ngOnInit() {
 
+    const user = await this.usuariosServices.getUser()
+    this.id = user.id;
   }
 
   onClick() {
 
-    localStorage.removeItem('token');
-    this.router.navigate(['/home'])
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+
+    swalWithBootstrapButtons.fire({
+      title: '¿Estás seguro?',
+      text: "Te vas a desconectar",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, desconectar',
+      cancelButtonText: 'No, continuar',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+          'Desconectado',
+          '¡Hasta pronto!',
+          'success'
+        )
+        localStorage.removeItem('token');
+        this.router.navigate(['/home'])
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          '¡Seguimos dentro!',
+          'error'
+        )
+      }
+    })
   }
+
+
 
 }
