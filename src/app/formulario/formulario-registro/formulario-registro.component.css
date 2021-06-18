@@ -1,0 +1,8 @@
+input .ng-touched{
+    border: 1px solid lightgreen
+}
+.error{
+    color:red;
+    font-weight: 300;
+    font-size: 14px;
+}

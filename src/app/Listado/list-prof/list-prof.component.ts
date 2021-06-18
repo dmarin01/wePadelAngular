@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormControl, Validators, FormGroup } from '@angular/forms';
 import { Profesor } from 'src/app/interface/profesor.interface';
 import { ProfesoresService } from '../../services/profesores.service';
 
@@ -9,6 +9,8 @@ import { ProfesoresService } from '../../services/profesores.service';
   styleUrls: ['./list-prof.component.css']
 })
 export class ListProfComponent implements OnInit {
+  formulario: FormGroup;
+
   precioMin: number;
   precioMax: number;
   isViewPrecio: boolean;
@@ -45,6 +47,10 @@ export class ListProfComponent implements OnInit {
     this.instalacionesSeleccionada = true;
 
     this.arrProfesores = [];
+
+    this.formulario = new FormGroup({
+
+    })
 
 
   }

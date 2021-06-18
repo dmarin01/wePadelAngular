@@ -4,27 +4,54 @@
         <div class="mt-3">
             <label class="form-label">Nombre de usuario</label>
             <input type="text" class="form-control" formControlName="username">
+            <p class="error" *ngIf="checkControl('username','required')">El campo UserName es requerido</p>
+            <p class="error" *ngIf="checkControl('username','maxlength')">El tamaño del username es máximo 25 caracteres
+            </p>
         </div>
         <div>
             <label class="form-label">Nombre</label>
             <input type="text" class="form-control" formControlName="nombre">
+            <p class="error" *ngIf="checkControl('nombre','required')">El campo nombre es requerido</p>
+            <p class="error" *ngIf="checkControl('nombre','minlength')">El tamaño del nombre es mínimo 3 caracteres
+            </p>
         </div>
         <div>
             <label class="form-label">Apellidos</label>
             <input type="text" class="form-control" formControlName="apellidos">
+            <p class="error" *ngIf="checkControl('apellidos','required')">El campo Apellidos es requerido</p>
+            <p class="error" *ngIf="checkControl('apellidos','minlength')">El tamaño del apellido es máximo 25
+                caracteres
+            </p>
         </div>
         <div>
             <label class="form-label">Email</label>
             <input type="text" class="form-control" formControlName="email">
+            <p class="error" *ngIf="checkControl('email','required')">El campo Email es requerido</p>
+
         </div>
         <div>
             <label class="form-label">Telefono</label>
             <input type="text" class="form-control" formControlName="telefono">
+            <p class="error" *ngIf="checkControl('telefono','required')">El campo teléfono es requerido</p>
+            <p class="error" *ngIf="checkControl('telefono','minlength')">El tamaño del teléfono es máximo de 13
+                caracteres
+            </p>
         </div>
         <div class="mb-3">
             <label class="form-label">Password</label>
             <input type="password" class="form-control" formControlName="password">
+            <p class="error" *ngIf="checkControl('password', 'pattern')">
+                El formato del password es incorrecto
+            </p>
+            <p class="error" *ngIf="checkControl('password','required')">El campo password es requerido</p>
+            <div class="mb-3">
+                <label class="form-label">Repite Password</label>
+                <input type="text" class="form-control" formControlName="repite_password">
+                <p class="error" *ngIf="formulario.hasError('passwordrepeatvalidator')">
+                    Las password no coinciden
+                </p>
+            </div>
         </div>
-        <button class="btn btn-outline-primary">Registrar</button>
+        <button class="btn btn-outline-primary" [disabled]="!formulario.valid">Registrar</button>
     </form>
 </div>
