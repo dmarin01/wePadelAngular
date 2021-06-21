@@ -37,14 +37,20 @@
                         <div class="mb-3">
                             <label class="form-label">Nombre de usuario</label>
                             <input type="text" class="form-control" formControlName="username">
+                            <p class="error" *ngIf="checkControl('username', 'maxlength')">
+                                El tamaño del usuario son maximo 25 caracteres
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Nombre</label>
                             <input type="text" class="form-control" formControlName="nombre">
+                            <p class="error" *ngIf="checkControl('nombre', 'minlength')">
+                                El tamaño del nombre debe ser mínimo 3 caracteres
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Apellidos</label>
                             <input type="text" class="form-control" formControlName="apellidos">
+                            <p class="error" *ngIf="checkControl('apellidos', 'maxlength')">
+                                El tamaño del apellido son máximo 25 caracteres
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Dirección</label>
@@ -53,14 +59,20 @@
                         <div class="mb-3">
                             <label class="form-label">Nivel</label>
                             <input type="text" class="form-control" formControlName="nivel">
+                            <p class="error" *ngIf="checkControl('nivel', 'required')">
+                                El campo nivel es requerido
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Telefono</label>
                             <input type="text" class="form-control" formControlName="telefono">
+                            <p class="error" *ngIf="checkControl('telefono', 'required')">
+                                El campo teléfono es requerido
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Email</label>
                             <input type="text" class="form-control" formControlName="email">
+                            <p class="error" *ngIf="checkControl('email', 'requierd')">
+                                El campo email es requerido
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Edad</label>

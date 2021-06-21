@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/interface/cliente.interface';
 import { UsuariosService } from 'src/app/services/usuarios.service';
@@ -21,13 +21,29 @@ export class ProfileComponent implements OnInit {
 
     this.formulario = new FormGroup({
       id: new FormControl(),
-      username: new FormControl(),
-      nombre: new FormControl(),
-      apellidos: new FormControl(),
+      username: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(25)
+      ]),
+      nombre: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3)
+      ]),
+      apellidos: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(25)
+      ]),
       direccion: new FormControl(),
-      nivel: new FormControl(),
-      telefono: new FormControl(),
-      email: new FormControl(),
+      nivel: new FormControl('', [
+        Validators.required
+      ]),
+      telefono: new FormControl('', [
+        Validators.required
+      ]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
+      ]),
       edad: new FormControl(),
       fecha_registro: new FormControl(),
     })
@@ -81,6 +97,9 @@ export class ProfileComponent implements OnInit {
 
       window.location.reload()
     })
+  }
+  checkControl(controlName, validatorName) {
+    return this.formulario.get(controlName).hasError(validatorName) && this.formulario.get(controlName).touched;
   }
 
 
