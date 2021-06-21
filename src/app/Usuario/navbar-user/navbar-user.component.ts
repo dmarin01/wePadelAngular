@@ -18,10 +18,9 @@ export class NavbarUserComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public usuariosServices: UsuariosService) { }
 
   async ngOnInit() {
-
-    const user = await this.usuariosServices.getUser()
+    /* const user = await this.usuariosServices.getUser()
     this.id = user.id;
-  }
+   */}
 
   onClick() {
 

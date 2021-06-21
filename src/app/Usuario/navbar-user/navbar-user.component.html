@@ -27,7 +27,7 @@
                                 class="my-5"></i>Ayuda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hover-underline-animation me-5 " [routerLink]="['/formteacher', id]">Dar
+                        <a class="nav-link hover-underline-animation me-5 " [routerLink]="['/formteacher']">Dar
                             clases particulares</a>
                     </li>
                     <li class="nav-item me-5" *ngIf="!usuariosServices.isloged()">
@@ -40,7 +40,7 @@
                             sesión</a>
                     </li>
                     <li class="nav-item me-5" *ngIf="usuariosServices.isloged()">
-                        <a class="nav-link hover-underline-animation me-3 " [routerLink]="['/user', id]">Mi
+                        <a class="nav-link hover-underline-animation me-3 " [routerLink]="['/user']">Mi
                             perfil</a>
                     </li>
                     <li class="nav-item" *ngIf="usuariosServices.isloged()">

@@ -31,8 +31,6 @@ export class ProfesoresService {
       headers: new HttpHeaders({
         authorization: localStorage.getItem('token')
       })
-
-
     };
     return this.httpClient.post(this.baseUrl, formValues, httpOptions).toPromise();
   }
@@ -49,7 +47,10 @@ export class ProfesoresService {
 
 
   getById(): Promise<Profesor> {
-    return this.httpClient.get<Profesor>(this.baseUrl).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
+    }
+    return this.httpClient.get<Profesor>(this.baseUrl, httpOptions).toPromise();
   }
 
 
