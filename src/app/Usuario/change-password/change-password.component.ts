@@ -23,6 +23,16 @@ export class ChangePasswordComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  passwordValidator(form) {
+    const passwordValue = form.get('password1').value;
+    const passwordRepeat = form.get('password2').value;
+    if (passwordValue === passwordRepeat) {
+      return null
+    } else {
+      return ({ passwordvalidator: true })
+    }
+  }
+
   async onSubmit() {
 
 

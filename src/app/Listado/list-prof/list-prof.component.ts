@@ -86,8 +86,8 @@ export class ListProfComponent implements OnInit {
   }
 
 
-  async onClick(profesorId) {
-    return await this.profesoresService.getById(profesorId);
+  async onClick() {
+    return await this.profesoresService.getById();
 
   } catch(error) {
     console.log(error);
