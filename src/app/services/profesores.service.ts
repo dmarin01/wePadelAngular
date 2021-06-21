@@ -48,8 +48,8 @@ export class ProfesoresService {
   }
 
 
-  getById(pId: number): Promise<Profesor> {
-    return this.httpClient.get<Profesor>(`${this.baseUrl}/${pId}`).toPromise();
+  getById(): Promise<Profesor> {
+    return this.httpClient.get<Profesor>(this.baseUrl).toPromise();
   }
 
 

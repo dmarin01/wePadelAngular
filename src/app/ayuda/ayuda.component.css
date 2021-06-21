@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+p, h2, h4{
+    font-family: 'Inter', sans-serif;
+}
+
 img{
     width: 50%;
 }
