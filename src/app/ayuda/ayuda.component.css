@@ -1,3 +1,7 @@
+root{
+
+}
+
 img{
     width: 50%;
 }
@@ -9,4 +13,7 @@ img{
 }
 .img3{
     width: 42%;
+}
+h2{
+    font-family: '';
 }

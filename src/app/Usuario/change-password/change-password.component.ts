@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 declare var Swal;
 
@@ -12,17 +13,37 @@ export class ChangePasswordComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private usuarioService: UsuariosService) {
+    this.formulario = new FormGroup({
+      password1: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
+      ]),
+      password2: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
+      ])
+    })
   }
 
+  ngOnInit(): void {
+
+  }
+  passwordValidator(form) {
+    const passwordValue = form.get('password1').value;
+    const passwordRepeat = form.get('password2').value;
+    if (passwordValue === passwordRepeat) {
+      return null
+    } else {
+      return ({ passwordvalidator: true })
+    }
+  }
   onSubmit() {
-
-
 
 
     Swal.fire('La contraseña actualizada')
   }
 
+
 }
+
