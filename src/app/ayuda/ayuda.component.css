@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
  .imghelp3{
     background-image: url('../../assets/ayuda/ayuda_confianza.jpg');
     background-size: contain;
@@ -14,6 +15,9 @@
     background-position: center;
     background-repeat: no-repeat;
 
+p, h2, h4{
+    font-family: 'Inter', sans-serif;
+}
     width: 100%;
     height: 15em;
     margin: 0 auto;
