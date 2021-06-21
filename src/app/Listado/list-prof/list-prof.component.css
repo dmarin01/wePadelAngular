@@ -1,19 +1,19 @@
-.text-center{
-	padding: 40px 0px 0px 0px;
-}
 
 ul{
 	margin:0;
 	list-style-type: none;
 }
 
+.wz {
+	width: 30%;
+	margin: 0 auto;
+}
 
 #filter-list{
 	display: inline-block;
 	border:1px solid #dddddd;
 	border-radius: 30px;
 	padding: 4px;
-	margin:0 0 60px;
 }
 #filter-list li{
 	display: inline-block;

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+=======
+import { FormControl, FormGroup } from '@angular/forms';
+>>>>>>> develop
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 declare var Swal;
@@ -38,8 +42,8 @@ export class ChangePasswordComponent implements OnInit {
       return ({ passwordvalidator: true })
     }
   }
-  onSubmit() {
 
+  async onSubmit() {
 
     Swal.fire('La contraseña actualizada')
   }

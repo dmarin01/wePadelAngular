@@ -3,33 +3,33 @@
 <!--NAVBAR-->
 <div class="container">
     <div class="row">
-        <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center my-4">
             <ul id="filter-list">
                 <li class="filter" data-filter="1" (click)="viewSection($event)">Precio</li>
                 <li class="filter" data-filter="2" (click)="viewSection($event)">Nivel</li>
                 <li class="filter" data-filter="3" (click)="viewSection($event)">Instalaciones</li>
             </ul>
         </div>
-        <div class="col-md-12 text-center" *ngIf="(isViewPrecio)">
+        <div class="col-md-12 text-center my-3 " *ngIf="(isViewPrecio)">
             <input [(ngModel)]='precioMin' placeholder="Precio Mínimo">
-            <input [(ngModel)]='precioMax' placeholder="Precio Máximo">
-            <button class="btn btn-primary" (click)="onClickPrecio()">Enviar</button>
+            <input class="mx-3" [(ngModel)]='precioMax' placeholder="Precio Máximo">
+            <button class="btn btn-primary mx-2" (click)="onClickPrecio()">Enviar</button>
         </div>
-        <div class="col-md-12 text-center" *ngIf="(isViewNivel)">
+        <div class="my-4 text-center wz" *ngIf="(isViewNivel)">
             <!--<input (input)=" onInput($event)" [(ngModel)]="nivel">-->
-            <div class="col-md-12 text-center">
-                <select name="nivel" id="nivel" (change)="onInputNivel($event)" [(ngModel)]="nivel">
-                    <option value="1">Iniciación</option>
-                    <option value="2">Básico</option>
-                    <option value="3">Intermedio</option>
-                    <option value="4">Avanzado</option>
-                    <option value="5">Experto</option>
-                </select>
 
-            </div>
+            <select name="nivel" id="nivel" class="form-select" (change)="onInputNivel($event)" [(ngModel)]="nivel">
+                <option value="1">Iniciación</option>
+                <option value="2">Básico</option>
+                <option value="3">Intermedio</option>
+                <option value="4">Avanzado</option>
+                <option value="5">Experto</option>
+            </select>
+
+
         </div>
-        <div class="col-md-12 text-center" *ngIf="(isViewInstalaciones)">
-            <select name="instalaciones" id="instalaciones" (change)="onInputInstalaciones($event)"
+        <div class="col-md-12 text-center my-4 wz" *ngIf="(isViewInstalaciones)">
+            <select name="instalaciones" id="instalaciones" class="form-select" (change)="onInputInstalaciones($event)"
                 [(ngModel)]="instalaciones">
                 <option value="1">Si</option>
                 <option value="0">No</option>
@@ -38,9 +38,9 @@
     </div>
     <div class="colum">
         <div class="row">
-            <div class="card-group">
-                <div class="card-group" *ngFor="let profesor of arrProfesores"
-                    style="width: 20rem; border-radius: 16px;">
+            <div class="card-group  d-flex justify-content-center">
+                <div class="card-group m-2" *ngFor="let profesor of arrProfesores"
+                    style="width: 20rem; height: 30rem; border-radius: 16px;">
                     <img [src]="profesor.img_cliente" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">{{profesor.nombre}} {{profesor.apellidos}}</h5>
