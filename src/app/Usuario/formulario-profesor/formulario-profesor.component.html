@@ -1,10 +1,10 @@
 <app-navbar-user></app-navbar-user>
 
-<div class="container">
+<div class="container profe">
 
     <form class="mt-3" [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="mb-3">
-            <label class="form-label">Años de Experiencia</label>
+            <label class="form-label">Tiempo de Experiencia</label>
             <input type="number" class="form-control" formControlName="experiencia" placeholder="Indica tu Experiencia">
         </div>
         <div class="mb-3">
@@ -14,7 +14,7 @@
         <div class="mb-3">
             <label class="form-label">Material Propio</label>
             <select name="material" class="form-control" formControlName="material_propio">
-                <option selected>Elige una opcion</option>
+                <option value="default" selected>Elige una opción</option>
                 <option value="si">Si</option>
                 <option value="no">No</option>
             </select>
@@ -22,18 +22,18 @@
         <div class="mb-3">
             <label class="form-label">Nivel Iniciación</label>
             <select name="nivel" class="form-control" formControlName="nivel">
-                <option selected>Elige un nivel</option>
-                <option value="1">BÁSICO</option>
-                <option value="2">INICIACION</option>
-                <option value="3">INTERMEDIO</option>
-                <option value="4">AVANZADO</option>
-                <option value="5">EXPERTO</option>
+                <option value="default" selected>Elige un nivel</option>
+                <option value="1">Básico</option>
+                <option value="2">Iniciación</option>
+                <option value="3">Intermedio</option>
+                <option value="4">Avanzado</option>
+                <option value="5">Experto</option>
             </select>
         </div>
         <div class="mb-3">
             <label class="form-label">Desplazamiento</label>
             <select name="desplazamiento" class="form-control" formControlName="desplazamiento">
-                <option selected>Elige una opcion</option>
+                <option value="default" selected>Elige una opción</option>
                 <option value="1">Si</option>
                 <option value="0">No</option>
             </select>
@@ -41,7 +41,7 @@
         <div class="mb-3">
             <label class="form-label">Instalacion Propia</label>
             <select name="instalacion_propia" class="form-control" formControlName="instalacion_propia">
-                <option selected>Elige una opcion</option>
+                <option value="default" selected>Elige una opción</option>
                 <option value="1">Si</option>
                 <option value="0">No</option>
             </select>

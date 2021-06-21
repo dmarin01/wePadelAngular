@@ -18,10 +18,10 @@ export class FormularioProfesorComponent implements OnInit {
       id: new FormControl(),
       experiencia: new FormControl(),
       precio: new FormControl(),
-      material_propio: new FormControl(),
-      niveles: new FormControl(),
-      desplazamiento: new FormControl(),
-      instalacion_propia: new FormControl(),
+      material_propio: new FormControl('default'),
+      nivel: new FormControl('default'),
+      desplazamiento: new FormControl('default'),
+      instalacion_propia: new FormControl('default'),
     })
   }
 
