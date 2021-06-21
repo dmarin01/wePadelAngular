@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 declare var Swal;
 
@@ -12,13 +13,17 @@ export class ChangePasswordComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor() { }
+  constructor(private usuarioServices: UsuariosService) {
+    this.formulario = new FormGroup({
+      password1: new FormControl(),
+      password2: new FormControl()
+    })
+  }
 
   ngOnInit(): void {
   }
 
-  onSubmit() {
-
+  async onSubmit() {
 
 
 

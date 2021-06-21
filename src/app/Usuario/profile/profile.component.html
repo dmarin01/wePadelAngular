@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-lg-5 col-sm-12 mt-5 ps-5">
                 <div class="card" style="width: 18rem;">
-                    <img style="border-radius: 50%; width: 10rem; margin: 1rem auto;" [src]="user?.img_cliente"
-                        class="card-img-top" alt="...">
+                    <img style="border-radius: 50%; width: 10rem; height: 10rem; margin: 1rem auto;"
+                        [src]="user?.img_cliente" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{user?.username}}</h5>
                         <p class="card-text">Descripcion</p>
@@ -19,9 +19,9 @@
                     </ul>
                     <div class="card-body">
                         <div class="row justify-content-evenly">
-                            <a href="#" class=" col-6 btn btn-primary card-link" routerLink="/changeimg">Subir
+                            <a class=" col-6 btn btn-primary card-link" routerLink="/changeimg">Subir
                                 imagen</a>
-                            <a href="#" class="col-8 mt-3 btn btn-primary card-link" routerLink="/changepw">Cambiar
+                            <a class="col-8 mt-3 btn btn-primary card-link" routerLink="/changepw">Cambiar
                                 contraseña</a>
                         </div>
                     </div>
@@ -30,10 +30,10 @@
             <div class="col-lg-7 col-sm-12 mt-5 pe-5">
                 <div>
                     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-                        <div class="mb-3">
+                        <!--     <div class="mb-3">
                             <label class="form-label">Id usuario</label>
                             <input type="text" class="form-control" formControlName="id" disabled>
-                        </div>
+                        </div> -->
                         <div class="mb-3">
                             <label class="form-label">Nombre de usuario</label>
                             <input type="text" class="form-control" formControlName="username">
