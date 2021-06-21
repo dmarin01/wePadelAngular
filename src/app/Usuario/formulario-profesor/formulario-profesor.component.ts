@@ -27,14 +27,16 @@ export class FormularioProfesorComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
   async onSubmit() {
     console.log(this.formulario.value.id);
     try {
-      const response = await this.profesoresServices.formteacher(this.formulario.value);
+      const response = await this.profesoresServices.create(this.formulario.value);
       if (response['affectedRows'] === 1) {
         Swal.fire('Te has registrado como profesor');
         this.formulario.reset();
-        this.router.navigate(['/user', response['id']])//o navigate(['/profesores',response['fk_usuarios']
+        this.router.navigate(['/user'])//o navigate(['/profesores',response['fk_usuarios']
       }
       if (response['error']) {
         Swal.fire('Ha ocurrido un error', response['error'], 'error')

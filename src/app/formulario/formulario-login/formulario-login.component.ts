@@ -30,9 +30,15 @@ export class FormularioLoginComponent implements OnInit {
 
   async onSubmit() {
     const response = await this.usuariosServices.loginUser(this.formulario.value);
+    console.log(response);
 
-    this.router.navigate(['/user/', response['id']]);
-    localStorage.setItem('token', response['token']);
+    if (response['error']) {
+      console.log('Error contraseña');
+
+    } else {
+      localStorage.setItem('token', response['token']);
+      this.router.navigate(['/user']);
+    }
   }
 
 

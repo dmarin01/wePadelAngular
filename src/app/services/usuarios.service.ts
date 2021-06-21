@@ -54,12 +54,20 @@ export class UsuariosService {
   }
 
 
+  //función ocultar botones nav
   isloged() {
     if (localStorage.getItem('token') === null) {
       return false;
     } else {
       return true;
     }
+  }
+
+  changePass(formValue) {
+    const httpOptions = {
+      headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
+    }
+    return this.httpClient.put(`${this.baseUrl}/api/clientes/changepw`, formValue, httpOptions).toPromise()
   }
 
 }
