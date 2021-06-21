@@ -6,3 +6,9 @@ input .ng-touched{
     font-weight: 300;
     font-size: 14px;
 }
+
+.register{
+    min-width: 20em;
+   width: 35%;
+    margin: 0 auto;
+}

@@ -1,14 +1,41 @@
+ .imghelp3{
+    background-image: url('../../assets/ayuda/ayuda_confianza.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 15em;
+    margin: 0 auto;
+} 
 
+ .imghelp2{
+    background-image: url('../../assets/ayuda/img3.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 
-img{
-    width: 50%;
-}
-.img2{
-    width: 49%;
-}
-.img4{
-    width: 40%;
-}
-.img3{
-    width: 42%;
-}
+    width: 100%;
+    height: 15em;
+    margin: 0 auto;
+} 
+ .imghelp1{
+    background-image: url('../../assets/ayuda/interaccion.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 15em;
+    margin: 0 auto;
+} 
+ .imghelp4{
+    background-image: url('../../assets/ayuda/imagen4.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 15em;
+    margin: 0 auto;
+} 
+
