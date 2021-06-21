@@ -38,8 +38,8 @@ export class NavbarUserComponent implements OnInit {
       text: "Te vas a desconectar",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Si, desconectar',
       cancelButtonText: 'No, continuar',
+      confirmButtonText: 'Si, desconectar',
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
