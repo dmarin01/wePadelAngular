@@ -4,6 +4,10 @@ ul{
 	list-style-type: none;
 }
 
+.wz {
+	width: 30%;
+	margin: 0 auto;
+}
 
 #filter-list{
 	display: inline-block;

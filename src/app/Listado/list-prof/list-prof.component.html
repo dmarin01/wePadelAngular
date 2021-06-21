@@ -3,19 +3,19 @@
 <!--NAVBAR-->
 <div class="container">
     <div class="row">
-        <div class="col-md-12 text-center my-3">
+        <div class="col-md-12 text-center my-4">
             <ul id="filter-list">
                 <li class="filter" data-filter="1" (click)="viewSection($event)">Precio</li>
                 <li class="filter" data-filter="2" (click)="viewSection($event)">Nivel</li>
                 <li class="filter" data-filter="3" (click)="viewSection($event)">Instalaciones</li>
             </ul>
         </div>
-        <div class="col-md-12 text-center my-3" *ngIf="(isViewPrecio)">
+        <div class="col-md-12 text-center my-3 " *ngIf="(isViewPrecio)">
             <input [(ngModel)]='precioMin' placeholder="Precio Mínimo">
             <input class="mx-3" [(ngModel)]='precioMax' placeholder="Precio Máximo">
             <button class="btn btn-primary mx-2" (click)="onClickPrecio()">Enviar</button>
         </div>
-        <div class="my-3 text-center" *ngIf="(isViewNivel)">
+        <div class="my-4 text-center wz" *ngIf="(isViewNivel)">
             <!--<input (input)=" onInput($event)" [(ngModel)]="nivel">-->
 
             <select name="nivel" id="nivel" class="form-select" (change)="onInputNivel($event)" [(ngModel)]="nivel">
@@ -28,7 +28,7 @@
 
 
         </div>
-        <div class="col-md-12 text-center my-3" *ngIf="(isViewInstalaciones)">
+        <div class="col-md-12 text-center my-4 wz" *ngIf="(isViewInstalaciones)">
             <select name="instalaciones" id="instalaciones" class="form-select" (change)="onInputInstalaciones($event)"
                 [(ngModel)]="instalaciones">
                 <option value="1">Si</option>

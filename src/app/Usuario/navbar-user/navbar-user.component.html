@@ -1,7 +1,7 @@
 <div class="wrapper">
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="btn navbar-brand logomenu" [routerLink]="['/home', id]"><img
+            <a class="navbar-brand logomenu" [routerLink]="['/home', id]"><img
                     src="../../../assets/img/Captura-de-pantalla-2021-06-06-a-las-17.59.54.svg" alt=""></a>
 
 
@@ -19,21 +19,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link hover-underline-animation me-5 " [routerLink]="['/formteacher', id]">Dar
-                            clases particulares</a>
+                        <a class="nav-link hover-underline-animation me-5" routerLink="/profesores">Busca tu
+                            profesor</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link hover-underline-animation me-5 " routerLink="/register" routerLink='/help'><i
                                 class="my-5"></i>Ayuda</a>
                     </li>
-
-
                     <li class="nav-item">
-                        <a class="nav-link hover-underline-animation me-5" routerLink="/profesores">Busca tu
-                            profesor</a>
+                        <a class="nav-link hover-underline-animation me-5 " [routerLink]="['/formteacher', id]">Dar
+                            clases particulares</a>
                     </li>
-
-
                     <li class="nav-item me-5" *ngIf="!usuariosServices.isloged()">
                         <a class=" nav-link hover-underline-animation me-3" routerLink="/register">Unirse
                             ahora</a>
@@ -43,11 +39,6 @@
                                 class="fas fa-user-circle me-2"></i>Iniciar
                             sesión</a>
                     </li>
-
-
-
-
-
                     <li class="nav-item me-5" *ngIf="usuariosServices.isloged()">
                         <a class="nav-link hover-underline-animation me-3 " [routerLink]="['/user', id]">Mi
                             perfil</a>
@@ -56,7 +47,6 @@
                         <a class="nav-link mb-2 hover-underline-animation  me-5 " (click)="onClick()"><i
                                 class="fas fa-user-circle me-2"></i>Desconectar</a>
                     </li>
-
                 </ul>
             </div>
         </div>
