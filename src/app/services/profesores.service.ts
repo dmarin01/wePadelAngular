@@ -32,7 +32,7 @@ export class ProfesoresService {
         authorization: localStorage.getItem('token')
       })
     };
-    return this.httpClient.post(this.baseUrl, formValues, httpOptions).toPromise();
+    return this.httpClient.post(`${this.baseUrl}/create`, formValues, httpOptions).toPromise();
   }
 
   //devolver profesores por precio
