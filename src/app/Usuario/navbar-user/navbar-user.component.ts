@@ -18,10 +18,9 @@ export class NavbarUserComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public usuariosServices: UsuariosService) { }
 
   async ngOnInit() {
-
-    const user = await this.usuariosServices.getUser()
+    /* const user = await this.usuariosServices.getUser()
     this.id = user.id;
-  }
+   */}
 
   onClick() {
 
@@ -38,8 +37,8 @@ export class NavbarUserComponent implements OnInit {
       text: "Te vas a desconectar",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Si, desconectar',
       cancelButtonText: 'No, continuar',
+      confirmButtonText: 'Si, desconectar',
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {

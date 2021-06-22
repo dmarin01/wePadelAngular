@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 declare var Swal;
@@ -13,7 +14,7 @@ export class ChangePasswordComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor(private usuarioService: UsuariosService) {
+  constructor(private usuarioService: UsuariosService, private router: Router) {
     this.formulario = new FormGroup({
       password1: new FormControl('', [
         Validators.required,
@@ -23,7 +24,7 @@ export class ChangePasswordComponent implements OnInit {
         Validators.required,
         Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
       ])
-    })
+    }, [this.passwordValidator])
   }
 
   ngOnInit(): void {
@@ -32,15 +33,22 @@ export class ChangePasswordComponent implements OnInit {
   passwordValidator(form) {
     const passwordValue = form.get('password1').value;
     const passwordRepeat = form.get('password2').value;
-    if (passwordValue === passwordRepeat) {
-      return null
-    } else {
+    if ((passwordValue !== passwordRepeat) && (form.get('password2').dirty)) {
       return ({ passwordvalidator: true })
+    } else {
+      return null
     }
   }
 
-  async onSubmit() {
+  onSubmit() {
+    this.usuarioService.changePass(this.formulario.value)
 
+      .then(result => {
+        console.log(result);
+
+        this.router.navigate(['/user'])
+
+      })
     Swal.fire('La contraseña actualizada')
   }
 

@@ -39,7 +39,7 @@ export class ChangeImgProfileComponent implements OnInit {
     this.usuarioService.upImg(fd).then(result => {
       console.log(result);
 
-      this.router.navigate(['/user', result['id']]);
+      this.router.navigate(['/user']);
     })
 
     Swal.fire('Foto de perfil actualizada')
