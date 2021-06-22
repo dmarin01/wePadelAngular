@@ -10,6 +10,7 @@ import { ChangePasswordComponent } from './Usuario/change-password/change-passwo
 import { FormularioProfesorComponent } from './Usuario/formulario-profesor/formulario-profesor.component';
 import { ProfileComponent } from './Usuario/profile/profile.component';
 import { GuardGuard } from './guard.guard'
+import { DetalleComponent } from './detalle/detalle.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'changeimg', component: ChangeImgProfileComponent, canActivate: [GuardGuard] },
   { path: 'formteacher', component: FormularioProfesorComponent, canActivate: [GuardGuard] },
   { path: 'help', component: AyudaComponent },
+  { path: 'detalle', component: DetalleComponent, canActivate: [GuardGuard] },
   { path: '**', component: HomeComponent },
 ];
 

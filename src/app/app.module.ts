@@ -18,7 +18,8 @@ import { ListProfComponent } from './Listado/list-prof/list-prof.component';
 import { ChangePasswordComponent } from './Usuario/change-password/change-password.component';
 import { ChangeImgProfileComponent } from './Usuario/change-img-profile/change-img-profile.component';
 import { FormularioProfesorComponent } from './Usuario/formulario-profesor/formulario-profesor.component';
-import { AyudaComponent } from './ayuda/ayuda.component'
+import { AyudaComponent } from './ayuda/ayuda.component';
+import { DetalleComponent } from './detalle/detalle.component'
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AyudaComponent } from './ayuda/ayuda.component'
     ChangeImgProfileComponent,
     FormularioProfesorComponent,
     AyudaComponent,
+    DetalleComponent,
   ],
   imports: [
     BrowserModule,

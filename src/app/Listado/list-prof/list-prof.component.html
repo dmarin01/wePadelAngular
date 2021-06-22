@@ -36,31 +36,38 @@
             </select>
         </div>
     </div>
-    <div class="colum">
-        <div class="row">
-            <div class="card-group  d-flex justify-content-center">
-
-                <div class="card-group individual me-3 mb-4" *ngFor="let profesor of arrProfesores">
-                    <img [src]="profesor.img_cliente" class="card-img"
-                        style="width: 80%; height: auto; border-radius: 16px; margin: auto; margin-top: 1.5em;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{profesor.nombre}} {{profesor.apellidos}}</h5>
-                        <!--no aparece solo referencia ID-->
-                        <p>Experiencia : <span>{{profesor.experiencia}} </span>años</p>
-                        <p>Precio : <span>{{profesor.precio}}</span> €/hora</p>
-                        <p class="card-text texto">Clases divertidas y didácticas, aunque también exigentes para los más
-                            peques. No faltarán los juegos, pero la técnica no
-                            se debe pasar por alto!
-                            En posesión del titulo de Instructor por la Asociación Profesional Española de Centros de
-                            Enseñanza Deportiva.</p>
-                        <a href="#" class="btn btn-primary" (click)="onClick(profesor.id)">Ver profe</a>
-                        <!-- crear routerlink para ver el detalle del profesor, que sería coger el token o id-->
 
 
+    <!--prueba-->
+    <div class="row">
+        <div class="card-group col-12">
 
-                    </div>
-                </div>
-            </div>
+            <ul class="cards" *ngFor="let profesor of arrProfesores">
+                <li class="list-teacher">
+                    <a href="" class="card">
+                        <img [src]="profesor.img_cliente" class="card__image">
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                    <path />
+                                </svg>
+                                <img class="card__thumb" [src]="profesor.img_cliente" alt="" />
+                                <div class="card__header-text">
+                                    <h3 class="card__title">{{profesor.nombre}} {{profesor.apellidos}} </h3>
+                                    <span class="card__status">{{profesor.precio}} €/hora</span>
+                                    <span class="card__status">Experiencia: {{profesor.experiencia}} Años</span>
+                                </div>
+                            </div>
+                            <p class="card__description">Clases divertidas y didácticas, aunque también exigentes
+                                para los más
+                                peques. No faltarán los juegos, pero la técnica no
+                                se debe pasar por alto!
+                                En posesión del titulo de Instructor por la Asociación Profesional Española de
+                                Centros de
+                                Enseñanza Deportiva.</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
-</div>
