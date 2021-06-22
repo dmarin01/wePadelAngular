@@ -38,3 +38,22 @@ ul{
 	background-color: #53bff0;
 	color: #fff;
 }
+
+.individual{
+	border: 1px solid black;
+	overflow: hidden;
+	width: 25%;
+	border-radius: 5%;
+
+}
+
+.texto{
+	height: 5em;
+	overflow: scroll;
+	font-size: 12px;
+}
+.btn{
+	width: 5em;
+	font-size: 12px;
+	padding: 0;
+}
