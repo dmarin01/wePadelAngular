@@ -39,18 +39,28 @@
     <div class="colum">
         <div class="row">
             <div class="card-group  d-flex justify-content-center">
-                <div class="card-group m-2" *ngFor="let profesor of arrProfesores"
-                    style="width: 20rem; height: 30rem; border-radius: 16px;">
-                    <img [src]="profesor.img_cliente" class="card-img-top">
+
+                <div class="card-group individual m-2" *ngFor="let profesor of arrProfesores">
+                    <img [src]="profesor.img_cliente" class="card-img"
+                        style="width: 80%; height: auto; border-radius: 16px; margin: auto; margin-top: 1.5em;">
                     <div class="card-body">
                         <h5 class="card-title">{{profesor.nombre}} {{profesor.apellidos}}</h5>
                         <!--no aparece solo referencia ID-->
                         <p>Experiencia : <span>{{profesor.experiencia}} </span>años</p>
                         <p>Precio : <span>{{profesor.precio}}</span> €/hora</p>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary" (click)="onClick(profesor.id)">Mostrar mas</a>
+                        <p class="card-text texto">Clases divertidas y didácticas, aunque también exigentes para los más
+                            peques. No faltarán los juegos, pero la técnica no
+                            se debe pasar por alto!
+                            Para los adultos, no faltará la diversión y la conversación, pero serán clases con cierta
+                            exigencia física, se trata de
+                            sudar un poco, y haremos hincapié en los errores técnicos.
+                            En posesión del titulo de Instructor por la Asociación Profesional Española de Centros de
+                            Enseñanza Deportiva.</p>
+                        <a href="#" class="btn btn-primary" (click)="onClick(profesor.id)">Ver profe</a>
+                        <!-- crear routerlink para ver el detalle del profesor, que sería coger el token o id-->
+
+
+
                     </div>
                 </div>
             </div>
