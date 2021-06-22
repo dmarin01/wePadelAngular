@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
-
+declare var Swal;
 
 @Component({
   selector: 'app-formulario-login',
@@ -33,7 +33,12 @@ export class FormularioLoginComponent implements OnInit {
     console.log(response);
 
     if (response['error']) {
-      console.log('Error contraseña');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Usuario y/o contraseña erroneas',
+        footer: '<a href="/register">¿Aún no estás registrado?</a>'
+      })
 
     } else {
       localStorage.setItem('token', response['token']);
