@@ -23,11 +23,11 @@
                             profesor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hover-underline-animation me-5 " routerLink="/register" routerLink='/help'><i
+                        <a class="nav-link hover-underline-animation me-5" routerLink="/register" routerLink='/help'><i
                                 class="my-5"></i>Ayuda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hover-underline-animation me-5 " [routerLink]="['/formteacher']">Dar
+                        <a class="nav-link hover-underline-animation me-5" [routerLink]="['/formteacher']">Dar
                             clases particulares</a>
                     </li>
                     <li class="nav-item me-5" *ngIf="!usuariosServices.isloged()">
@@ -35,16 +35,16 @@
                             ahora</a>
                     </li>
                     <li class="nav-item me-5" *ngIf="!usuariosServices.isloged()">
-                        <a class="nav-link mb-2 hover-underline-animation me-5 " routerLink='/login'><i
+                        <a class="nav-link mb-2 hover-underline-animation me-5" routerLink='/login'><i
                                 class="fas fa-user-circle me-2"></i>Iniciar
                             sesión</a>
                     </li>
                     <li class="nav-item me-5" *ngIf="usuariosServices.isloged()">
-                        <a class="nav-link hover-underline-animation me-3 " [routerLink]="['/user']">Mi
+                        <a class="nav-link hover-underline-animation me-3" [routerLink]="['/user']">Mi
                             perfil</a>
                     </li>
-                    <li class="nav-item" *ngIf="usuariosServices.isloged()">
-                        <a class="nav-link mb-2 hover-underline-animation  me-5 " (click)="onClick()"><i
+                    <li class="nav-item desc" *ngIf="usuariosServices.isloged()">
+                        <a class="nav-link mb-2 hover-underline-animation me-5 " (click)="onClick()"><i
                                 class="fas fa-user-circle me-2"></i>Desconectar</a>
                     </li>
                 </ul>
