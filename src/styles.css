@@ -4,3 +4,15 @@
 body{
     font-family: 'Inter', sans-serif;
 }
+
+
+/* .navbar-nav{
+    width: 300px;
+    margin: 0 auto;
+    align-items: flex-start;
+
+} */
+
+.swal2-cancel {
+    margin-right: 2em;
+}

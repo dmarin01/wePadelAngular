@@ -10,12 +10,14 @@
                 <li class="filter" data-filter="3" (click)="viewSection($event)">Instalaciones</li>
             </ul>
         </div>
-        <div class="col-md-12 text-center my-3 " *ngIf="(isViewPrecio)">
+        <div class="col-md-12 text-center  " *ngIf="(isViewPrecio)">
+            <h5 class="my-3">Selecciona rango de precios</h5>
             <input [(ngModel)]='precioMin' placeholder="Precio Mínimo">
             <input class="mx-3" [(ngModel)]='precioMax' placeholder="Precio Máximo">
             <button class="btn btn-primary mx-2" (click)="onClickPrecio()">Enviar</button>
         </div>
-        <div class="my-4 text-center wz" *ngIf="(isViewNivel)">
+        <div class=" text-center wz" *ngIf="(isViewNivel)">
+            <h5 class="my-3">Selecciona el nivel de tus clases</h5>
             <!--<input (input)=" onInput($event)" [(ngModel)]="nivel">-->
 
             <select name="nivel" id="nivel" class="form-select" (change)="onInputNivel($event)" [(ngModel)]="nivel">
@@ -28,7 +30,8 @@
 
 
         </div>
-        <div class="col-md-12 text-center my-4 wz" *ngIf="(isViewInstalaciones)">
+        <div class="col-md-12 text-center wz" *ngIf="(isViewInstalaciones)">
+            <h5 class="my-3">Instalaciones</h5>
             <select name="instalaciones" id="instalaciones" class="form-select" (change)="onInputInstalaciones($event)"
                 [(ngModel)]="instalaciones">
                 <option value="1">Si</option>
@@ -44,18 +47,18 @@
 
             <ul class="cards" *ngFor="let profesor of arrProfesores">
                 <li class="list-teacher">
-                    <a href="" class="card">
+                    <a class="card">
                         <img [src]="profesor.img_cliente" class="card__image">
                         <div class="card__overlay">
                             <div class="card__header">
-                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="card__arc">
                                     <path />
                                 </svg>
-                                <img class="card__thumb" [src]="profesor.img_cliente" alt="" />
+                                <img class="card__thumb" [src]="profesor.img_cliente" />
                                 <div class="card__header-text">
                                     <h3 class="card__title">{{profesor.nombre}} {{profesor.apellidos}} </h3>
-                                    <span class="card__status">{{profesor.precio}} €/hora</span>
-                                    <span class="card__status">Experiencia: {{profesor.experiencia}} Años</span>
+                                    <div class="card__status">Precio: {{profesor.precio}} €/hora</div>
+                                    <div class="card__status">Experiencia: {{profesor.experiencia}} Años</div>
                                 </div>
                             </div>
                             <p class="card__description">Clases divertidas y didácticas, aunque también exigentes

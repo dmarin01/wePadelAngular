@@ -171,20 +171,19 @@ height: 400px;
   margin: 1em 0;
   font-family: "MockFlowFont";  
   font-size: .8em; 
-  color: #D7BDCA;  
+  color: #13a568;  
 }
 
 .card__status {
   font-size: .8em;
-  color: #D7BDCA;
+  color: #1b75be;
 }
 
 .card__description {
   padding: 0 2em 2em;
   margin: 0;
-  color: #D7BDCA;
+  color: #16030d;
   font-family: "MockFlowFont";   
-  display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
