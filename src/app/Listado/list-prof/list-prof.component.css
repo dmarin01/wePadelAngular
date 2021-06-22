@@ -40,11 +40,10 @@ ul{
 }
 
 .individual{
-	border: 1px solid black;
-	overflow: hidden;
-	width: 25%;
+	border: 1px solid black;	
+	width: 30%;
 	border-radius: 5%;
-
+	overflow:hidden;
 }
 
 .texto{
@@ -57,3 +56,8 @@ ul{
 	font-size: 12px;
 	padding: 0;
 }
+.individual .img{
+	-webkit-transform:scale(1.3);
+	transform:scale(1.3);
+}
+

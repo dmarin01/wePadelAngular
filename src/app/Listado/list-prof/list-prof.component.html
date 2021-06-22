@@ -40,7 +40,7 @@
         <div class="row">
             <div class="card-group  d-flex justify-content-center">
 
-                <div class="card-group individual m-2" *ngFor="let profesor of arrProfesores">
+                <div class="card-group individual me-3 mb-4" *ngFor="let profesor of arrProfesores">
                     <img [src]="profesor.img_cliente" class="card-img"
                         style="width: 80%; height: auto; border-radius: 16px; margin: auto; margin-top: 1.5em;">
                     <div class="card-body">
@@ -51,9 +51,6 @@
                         <p class="card-text texto">Clases divertidas y didácticas, aunque también exigentes para los más
                             peques. No faltarán los juegos, pero la técnica no
                             se debe pasar por alto!
-                            Para los adultos, no faltará la diversión y la conversación, pero serán clases con cierta
-                            exigencia física, se trata de
-                            sudar un poco, y haremos hincapié en los errores técnicos.
                             En posesión del titulo de Instructor por la Asociación Profesional Española de Centros de
                             Enseñanza Deportiva.</p>
                         <a href="#" class="btn btn-primary" (click)="onClick(profesor.id)">Ver profe</a>
