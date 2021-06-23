@@ -41,8 +41,6 @@ export class ProfesoresService {
       headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
     }
     return this.httpClient.get<Profesor[]>(`${this.baseUrl}/price/?min=${pPrecioMin}&max=${pPrecioMax}`, httpOptions).toPromise();
-
-
   }
 
 
@@ -69,6 +67,15 @@ export class ProfesoresService {
     }
     return this.httpClient.get<Profesor[]>(`${this.baseUrl}/instalations/${boolean}`, httpOptions).toPromise();
   }
+
+  //PROVINCIA - FALTA QUERY
+  getProfByProvincia(pProvincia: string): Promise<Profesor[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
+    }
+    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/provincia/{pProvincia}`, httpOptions).toPromise();
+  }
+
 
   formteacher(formValues: any) {
     return this.httpClient.post(`${this.baseUrl}/formteacher`, formValues).toPromise();

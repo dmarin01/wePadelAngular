@@ -1,0 +1,25 @@
+.imagen{
+width: 30em;
+border-radius: 10px;
+border: 1px solid black;
+padding: 1em;
+margin-right: 2em;
+}
+img{
+    width: 100%;
+    border-radius: 5px;
+}
+.description{
+    background-color: gainsboro;
+    border-radius:10px ;
+}
+.details{
+    margin-top: 2em;
+}
+button{
+    margin-bottom: 2em;
+}
+
+p{
+    font-size: 20px;
+}

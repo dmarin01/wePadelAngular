@@ -19,10 +19,13 @@ export class ListProfComponent implements OnInit {
   isViewNivel: boolean;
   instalaciones: boolean;
   isViewInstalaciones: boolean;
+  isViewProvincias: boolean;
 
   precioSeleccionado: number;
   nivelSeleccionado: string;
   instalacionesSeleccionada: boolean;
+
+
 
   arrPrecio: any[];
   arrNivel: any[];
@@ -41,6 +44,7 @@ export class ListProfComponent implements OnInit {
     this.isViewNivel = false;
     this.instalaciones = false;
     this.isViewInstalaciones = false;
+
 
     this.precioSeleccionado = 0;
     this.nivelSeleccionado = "";
@@ -80,6 +84,7 @@ export class ListProfComponent implements OnInit {
     this.isViewPrecio = ($event.target.dataset.filter === "1") ? !this.isViewPrecio : false;
     this.isViewNivel = ($event.target.dataset.filter === "2") ? !this.isViewNivel : false;
     this.isViewInstalaciones = ($event.target.dataset.filter === "3") ? !this.isViewInstalaciones : false;
+    this.isViewProvincias = ($event.target.dataset.filter === "4") ? !this.isViewProvincias : false;
 
 
     console.log($event.target.dataset.filter);
@@ -107,7 +112,10 @@ export class ListProfComponent implements OnInit {
 
     this.arrProfesores = await this.profesoresService.getProfByInstal($event.target.value);
   }
-  //peticion get por nivel
+
+  async onInputProvincias($event) {
+    this.arrProfesores = await this.profesoresService.getProfByProvincia($event.target.value);
+  }
 
 
 
