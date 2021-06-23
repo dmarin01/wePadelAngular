@@ -63,7 +63,7 @@ export class ProfileComponent implements OnInit {
         username: new FormControl(this.user.username),
         nombre: new FormControl(this.user.nombre),
         apellidos: new FormControl(this.user.apellidos),
-        direccion: new FormControl(this.user.direccion),
+        provincia: new FormControl(this.user.provincia),
         nivel: new FormControl(this.user.nivel),
         telefono: new FormControl(this.user.telefono),
         email: new FormControl(this.user.email),

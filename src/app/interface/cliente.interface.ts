@@ -3,7 +3,7 @@ export interface Cliente {
     username: string;
     nombre: string;
     apellidos: string;
-    direccion: string;
+    provincia: string;
     nivel: number;
     telefono: string;
     email: string;

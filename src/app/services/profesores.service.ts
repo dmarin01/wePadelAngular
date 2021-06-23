@@ -73,7 +73,7 @@ export class ProfesoresService {
     const httpOptions = {
       headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
     }
-    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/provincia/{pProvincia}`, httpOptions).toPromise();
+    return this.httpClient.get<Profesor[]>(`${this.baseUrl}/provincia/${pProvincia}`, httpOptions).toPromise();
   }
 
 

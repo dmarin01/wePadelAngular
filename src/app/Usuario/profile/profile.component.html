@@ -15,7 +15,7 @@
                         <li class="list-group-item">Nombre: {{user?.nombre}}</li>
                         <li class="list-group-item">Apellidos: {{user?.apellidos}}</li>
                         <li class="list-group-item">Nivel: {{user?.nivel}}</li>
-                        <li class="list-group-item">Ubicación: {{user?.direccion}}</li>
+                        <li class="list-group-item">Ubicación: {{user?.provincia}}</li>
                     </ul>
                     <div class="card-body">
                         <div class="row justify-content-evenly">
@@ -53,8 +53,8 @@
                                 El tamaño del apellido son máximo 25 caracteres
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Dirección</label>
-                            <input type="text" class="form-control" formControlName="direccion">
+                            <label class="form-label">Provincia</label>
+                            <input type="text" class="form-control" formControlName="provincia">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Nivel</label>

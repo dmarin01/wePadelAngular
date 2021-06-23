@@ -24,11 +24,7 @@ export class ListProfComponent implements OnInit {
   nivelSeleccionado: string;
   instalacionesSeleccionada: boolean;
 
-  arrPrecio: Profesor[];
-  arrNivel: Profesor[];
-  arrInstalaciones: Profesor[];
-
-  arrProfesores: Profesor[];
+  arrProfesores: Profesor[] = [];
 
 
   constructor(private profesoresService: ProfesoresService) {
@@ -46,8 +42,6 @@ export class ListProfComponent implements OnInit {
     this.precioSeleccionado = 0;
     this.nivelSeleccionado = "";
     this.instalacionesSeleccionada = true;
-
-    this.arrProfesores = [];
 
   }
 
