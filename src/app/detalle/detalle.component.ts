@@ -10,18 +10,15 @@ import { ProfesoresService } from '../services/profesores.service';
 })
 export class DetalleComponent implements OnInit {
 
-  detalleUser: any;
+  detalleUser;
 
   constructor(private profesorServices: ProfesoresService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
     this.activatedRoute.params.subscribe(async (params) => {
-      console.log(params);
 
-      const detalles = await this.profesorServices.getById(params)
-      console.log(detalles);
-
+      const detalles = await this.profesorServices.getById(params.id)
       this.detalleUser = detalles;
     })
 

@@ -17,60 +17,48 @@ export class ProfileComponent implements OnInit {
   user: Cliente;
   files;
 
-  constructor(private usuariosService: UsuariosService, private activatedRoute: ActivatedRoute) {
+  constructor(private usuariosService: UsuariosService) {
 
-    this.formulario = new FormGroup({
-      id: new FormControl(),
-      username: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(25)
-      ]),
-      nombre: new FormControl('', [
-        Validators.required,
-        Validators.minLength(3)
-      ]),
-      apellidos: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(25)
-      ]),
-      direccion: new FormControl(),
-      nivel: new FormControl('', [
-        Validators.required
-      ]),
-      telefono: new FormControl('', [
-        Validators.required
-      ]),
-      email: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
-      ]),
-      edad: new FormControl(),
-      fecha_registro: new FormControl(),
-    })
+
   }
 
 
 
 
-  ngOnInit() {
-    this.activatedRoute.params.subscribe(async (params) => {
-      const routeID = params.id;
+  async ngOnInit() {
 
-      this.user = await this.usuariosService.getUser();
-      console.log(this.user);
-      this.formulario = new FormGroup({
-        id: new FormControl(this.user.id),
-        username: new FormControl(this.user.username),
-        nombre: new FormControl(this.user.nombre),
-        apellidos: new FormControl(this.user.apellidos),
-        provincia: new FormControl(this.user.provincia),
-        nivel: new FormControl(this.user.nivel),
-        telefono: new FormControl(this.user.telefono),
-        email: new FormControl(this.user.email),
-        edad: new FormControl(this.user.edad),
-        fecha_registro: new FormControl(),
-      })
+
+
+    this.user = await this.usuariosService.getUser();
+    this.formulario = new FormGroup({
+      id: new FormControl(this.user.id),
+      username: new FormControl(this.user.username, [
+        Validators.required,
+        Validators.maxLength(25)
+      ]),
+      nombre: new FormControl(this.user.nombre, [
+        Validators.required,
+        Validators.minLength(3)
+      ]),
+      apellidos: new FormControl(this.user.apellidos, [
+        Validators.required,
+        Validators.maxLength(25)
+      ]),
+      provincia: new FormControl(this.user.provincia),
+      nivel: new FormControl(this.user.nivel, [
+        Validators.required
+      ]),
+      telefono: new FormControl(this.user.telefono, [
+        Validators.required
+      ]),
+      email: new FormControl(this.user.email, [
+        Validators.required,
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
+      ]),
+      edad: new FormControl(this.user.edad),
+      fecha_registro: new FormControl(),
     })
+
 
 
 
@@ -78,7 +66,7 @@ export class ProfileComponent implements OnInit {
 
   //formulario del usuario
   onSubmit() {
-    console.log(this.formulario.value.id);
+    console.log(this.formulario.value);
 
     Swal.fire({
       title: '¿Quieres aplicar los cambios a tu perfil?',
@@ -89,13 +77,15 @@ export class ProfileComponent implements OnInit {
     }).then(async (result) => {
       if (result.isConfirmed) {
         Swal.fire('Guardados!', '', 'success')
-        await this.usuariosService.updateUser(this.formulario.value)
+        const response = await this.usuariosService.updateUser(this.formulario.value)
+        console.log(response);
+
 
       } else if (result.isDenied) {
         Swal.fire('Cambios no guardados', '', 'info')
       }
 
-      window.location.reload()
+
     })
   }
   checkControl(controlName, validatorName) {

@@ -2,48 +2,51 @@
 <div class="container">
     <button class="btn btn-primary" [routerLink]="['/profesores']">Volver a la lista</button>
     <div class="header row">
-        <div class="imagen col-5">
+        <div class="imagen col-6">
             <img src="http://4.bp.blogspot.com/-vrsBj3YssoM/VO5R0Q0PL3I/AAAAAAAASBM/IcOF9VmaAKA/s1600/retrato-hombre-joven-pequeño-rostro-sin-copyright.jpg"
                 alt="">
         </div>
-        <div class="description col-6">
-            <h6>Descripción</h6>
-            <!--Descripcion del profe-->
-            <p>Clases de Padel para niños y adultos, divertidas y exigentes. Posibilidad de ser en INGLÉS. Graduado en
-                INEF y Máster
-                del profesorado en Educación Física
-
-                Metodología
-
-                Clases divertidas y didácticas, aunque también exigentes para los más peques. No faltarán los juegos,
-                pero la técnica no
-                se debe pasar por alto!
-                Para los adultos, no faltará la diversión y la conversación, pero serán clases con cierta exigencia
-                física, se trata de
-                sudar un poco, y haremos hincapié en los errores técnicos.
-                En posesión del titulo de Instructor por la Asociación Profesional Española de Centros de Enseñanza
-                Deportiva.
-                Trayectoria académica y profesional
-
-            </p>
+        <div class="col-6">
+            <div class="details">
+                <p>Nombre: {{detalleUser?.nombre}} {{detalleUser?.apellidos}}</p>
+                <p>Provincia: {{detalleUser?.provincia}}</p>
+            </div>
+            <div class="contacto">
+                <p>Precio: {{detalleUser?.precio}} €/h</p>
+                <button class="btn btn-primary">Contactar</button>
+            </div>
+            <div class="filters row">
+                <div class="data_filter col-4">
+                    <p>Experiencia : {{detalleUser?.experiencia}} años</p>
+                    <p>🎾 Material Propio : {{detalleUser?.material_propio}}</p>
+                    <p>📈 Nivel: {{detalleUser?.niveles}} </p>
+                    <p> 🚗 Desplazamiento : {{detalleUser?.desplazamiento}}</p>
+                </div>
+            </div>
         </div>
+
     </div>
 
-    <div class="details">
-        <p>Nombre: {{detalleUser?.nombre}}</p>
-        <p>Dirección: </p>
-    </div>
-    <div class="contacto">
-        <p>Precio: {{detalleUser?.precio}} €/h</p>
-        <button class="btn btn-primary">Contactar</button>
+    <div class="description col-6">
+        <h6 class="m-3">Descripción</h6>
+        <!--Descripcion del profe-->
+        <p>Clases de Padel para niños y adultos, divertidas y exigentes. Posibilidad de ser en INGLÉS. Graduado en
+            INEF y Máster
+            del profesorado en Educación Física
+
+            Metodología
+
+            Clases divertidas y didácticas, aunque también exigentes para los más peques. No faltarán los juegos,
+            pero la técnica no
+            se debe pasar por alto!
+            Para los adultos, no faltará la diversión y la conversación, pero serán clases con cierta exigencia
+            física, se trata de
+            sudar un poco, y haremos hincapié en los errores técnicos.
+            En posesión del titulo de Instructor por la Asociación Profesional Española de Centros de Enseñanza
+            Deportiva.
+            Trayectoria académica y profesional
+
+        </p>
     </div>
 
-    <div class="filters row">
-        <div class="data_filter col-6">
-            <p>Experiencia : <span></span></p>
-            <p>🎾 Material Propio : <span></span></p>
-            <p>📈 Niveles :<span></span> </p>
-            <p> 🚗 Desplazamiento : <span></span></p>
-        </div>
-    </div>
 </div>
