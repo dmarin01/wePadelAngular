@@ -71,7 +71,10 @@ export class ProfesoresService {
   }
 
   formteacher(formValues: any) {
-    return this.httpClient.post(`${this.baseUrl}/formteacher`, formValues).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
+    }
+    return this.httpClient.post(`${this.baseUrl}/formteacher`, formValues, httpOptions).toPromise();
   }
 
 
