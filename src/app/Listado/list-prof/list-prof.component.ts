@@ -115,6 +115,7 @@ export class ListProfComponent implements OnInit {
 
   async onInputProvincias($event) {
     this.arrProfesores = await this.profesoresService.getProfByProvincia($event.target.value);
+    console.log(this.arrProfesores);
   }
 
 
