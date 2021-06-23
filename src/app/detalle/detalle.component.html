@@ -1,33 +1,35 @@
 <app-navbar-user></app-navbar-user>
 <div class="container">
-    <button class="btn btn-primary" [routerLink]="['/profesores']">Volver a la lista</button>
+    <button class="btn btn-primary" [routerLink]="['/profesores']">Volver</button>
     <div class="header row">
         <div class="imagen col-6">
             <img src="http://4.bp.blogspot.com/-vrsBj3YssoM/VO5R0Q0PL3I/AAAAAAAASBM/IcOF9VmaAKA/s1600/retrato-hombre-joven-pequeño-rostro-sin-copyright.jpg"
                 alt="">
         </div>
-        <div class="col-6">
+        <div class="col-6 like">
             <div class="details">
                 <p>Nombre: {{detalleUser?.nombre}} {{detalleUser?.apellidos}}</p>
                 <p>Provincia: {{detalleUser?.provincia}}</p>
             </div>
             <div class="contacto">
                 <p>Precio: {{detalleUser?.precio}} €/h</p>
-                <button class="btn btn-primary">Contactar</button>
             </div>
             <div class="filters row">
-                <div class="data_filter col-4">
+                <div class="data_filter">
                     <p>Experiencia : {{detalleUser?.experiencia}} años</p>
                     <p>🎾 Material Propio : {{detalleUser?.material_propio}}</p>
                     <p>📈 Nivel: {{detalleUser?.niveles}} </p>
                     <p> 🚗 Desplazamiento : {{detalleUser?.desplazamiento}}</p>
+                </div>
+                <div class="button">
+                    <button class="btn btn-primary" (click)="onClick()">Contactar</button>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <div class="description col-6">
+    <div class="description col-11">
         <h6 class="m-3">Descripción</h6>
         <!--Descripcion del profe-->
         <p>Clases de Padel para niños y adultos, divertidas y exigentes. Posibilidad de ser en INGLÉS. Graduado en
@@ -44,7 +46,6 @@
             sudar un poco, y haremos hincapié en los errores técnicos.
             En posesión del titulo de Instructor por la Asociación Profesional Española de Centros de Enseñanza
             Deportiva.
-            Trayectoria académica y profesional
 
         </p>
     </div>
