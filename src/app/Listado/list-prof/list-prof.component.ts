@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, FormControl, Validators, FormGroup } from '@angular/forms';
 import { Profesor } from 'src/app/interface/profesor.interface';
 import { ProfesoresService } from '../../services/profesores.service';
 
@@ -9,7 +8,7 @@ import { ProfesoresService } from '../../services/profesores.service';
   styleUrls: ['./list-prof.component.css']
 })
 export class ListProfComponent implements OnInit {
-  formulario: FormGroup;
+
 
   precioMin: number;
   precioMax: number;
@@ -25,11 +24,9 @@ export class ListProfComponent implements OnInit {
   nivelSeleccionado: string;
   instalacionesSeleccionada: boolean;
 
-
-
-  arrPrecio: any[];
-  arrNivel: any[];
-  arrInstalaciones: any[];
+  arrPrecio: Profesor[];
+  arrNivel: Profesor[];
+  arrInstalaciones: Profesor[];
 
   arrProfesores: Profesor[];
 
@@ -52,11 +49,6 @@ export class ListProfComponent implements OnInit {
 
     this.arrProfesores = [];
 
-    this.formulario = new FormGroup({
-
-    })
-
-
   }
 
 
@@ -74,30 +66,12 @@ export class ListProfComponent implements OnInit {
 
   }
 
-  //Eventos
-
-
-
-
   //aparezca por pantalla
   viewSection($event) {
     this.isViewPrecio = ($event.target.dataset.filter === "1") ? !this.isViewPrecio : false;
     this.isViewNivel = ($event.target.dataset.filter === "2") ? !this.isViewNivel : false;
     this.isViewInstalaciones = ($event.target.dataset.filter === "3") ? !this.isViewInstalaciones : false;
-    this.isViewProvincias = ($event.target.dataset.filter === "4") ? !this.isViewProvincias : false;
-
-
-    console.log($event.target.dataset.filter);
   }
-
-
-  async onClick() {
-    return await this.profesoresService.getById();
-
-  } catch(error) {
-    console.log(error);
-  }
-
 
 
   async onClickPrecio() {
@@ -105,7 +79,11 @@ export class ListProfComponent implements OnInit {
   }
 
   async onInputNivel($event) {
+
     this.arrProfesores = await this.profesoresService.getProfesorByNivel($event.target.value)
+    console.log(this.arrProfesores);
+
+
   }
 
   async onInputInstalaciones($event) {
