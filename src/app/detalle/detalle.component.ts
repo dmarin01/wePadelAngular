@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProfesoresService } from '../services/profesores.service';
+
 
 @Component({
   selector: 'app-detalle',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleComponent implements OnInit {
 
-  constructor() { }
+  detalleUser: any;
 
-  ngOnInit(): void {
+  constructor(private profesorServices: ProfesoresService, private activatedRoute: ActivatedRoute) { }
+
+  ngOnInit() {
+
+    this.activatedRoute.params.subscribe(async (params) => {
+      console.log(params);
+
+      const detalles = await this.profesorServices.getById(params)
+      console.log(detalles);
+
+      this.detalleUser = detalles;
+    })
+
   }
 
 }

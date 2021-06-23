@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'changeimg', component: ChangeImgProfileComponent, canActivate: [GuardGuard] },
   { path: 'formteacher', component: FormularioProfesorComponent, canActivate: [GuardGuard] },
   { path: 'help', component: AyudaComponent },
-  { path: 'detalle', component: DetalleComponent, canActivate: [GuardGuard] },
+  { path: 'detalle/:id', component: DetalleComponent, canActivate: [GuardGuard] },
   { path: '**', component: HomeComponent },
 ];
 

@@ -44,11 +44,11 @@ export class ProfesoresService {
   }
 
 
-  getById(): Promise<Profesor> {
+  getById(id): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({ authorization: localStorage.getItem('token') })
     }
-    return this.httpClient.get<Profesor>(this.baseUrl, httpOptions).toPromise();
+    return this.httpClient.get<any>(`${this.baseUrl}/detalle/${id}`, httpOptions).toPromise();
   }
 
 

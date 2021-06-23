@@ -1,6 +1,6 @@
 <app-navbar-user></app-navbar-user>
-<button class="btn btn-primary" [routerLink]="['/profesores']">Volver a la lista</button>
 <div class="container">
+    <button class="btn btn-primary" [routerLink]="['/profesores']">Volver a la lista</button>
     <div class="header row">
         <div class="imagen col-5">
             <img src="http://4.bp.blogspot.com/-vrsBj3YssoM/VO5R0Q0PL3I/AAAAAAAASBM/IcOF9VmaAKA/s1600/retrato-hombre-joven-pequeño-rostro-sin-copyright.jpg"
@@ -30,11 +30,11 @@
     </div>
 
     <div class="details">
-        <p>Nombre: <span></span></p>
-        <p>Dirección: <span></span></p>
+        <p>Nombre: {{detalleUser?.nombre}}</p>
+        <p>Dirección: </p>
     </div>
     <div class="contacto">
-        <p>Precio: <span></span> €/h</p>
+        <p>Precio: {{detalleUser?.precio}} €/h</p>
         <button class="btn btn-primary">Contactar</button>
     </div>
 

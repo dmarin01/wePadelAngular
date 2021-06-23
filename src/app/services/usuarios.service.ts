@@ -30,6 +30,7 @@ export class UsuariosService {
   }
 
 
+
   //profile component
   getUser(): Promise<Cliente> {
     const httpOptions = {
@@ -44,6 +45,7 @@ export class UsuariosService {
     }
     return this.httpClient.put(`${this.baseUrl}/api/clientes/update`, formValues, httpOptions).toPromise();
   }
+
 
   upImg(fd: FormData) {
 
