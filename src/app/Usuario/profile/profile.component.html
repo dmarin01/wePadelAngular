@@ -8,8 +8,8 @@
                     <img style="border-radius: 50%; width: 10rem; height: 10rem; margin: 1rem auto;"
                         [src]="user?.img_cliente" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{user?.username}}</h5>
-                        <p class="card-text">Descripcion</p>
+                        <h5 class="card-title"><strong>{{user?.username}}</strong></h5>
+                        <p class="card-text m-1">{{user.descripcion}}</p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Nombre: {{user?.nombre}}</li>
@@ -139,6 +139,12 @@
                         <div class="mb-3">
                             <label class="form-label">Edad</label>
                             <input type="text" class="form-control" formControlName="edad">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Indica tu experiencia y titulación</label>
+                            <textarea name="description" maxlength="250" cols="50" rows="10"
+                                formControlName="descripcion">
+                            </textarea>
                         </div>
                         <button class="btn btn-success mb-3">Guardar</button>
                     </form>

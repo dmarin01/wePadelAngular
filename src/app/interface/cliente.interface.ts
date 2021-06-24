@@ -9,5 +9,6 @@ export interface Cliente {
     email: string;
     edad: number;
     fecha_inscripcion: Date;
-    img_cliente: string
+    img_cliente: string;
+    descripcion: string
 }
