@@ -20,6 +20,7 @@ export class DetalleComponent implements OnInit {
 
       const detalles = await this.profesorServices.getById(params.id)
       this.detalleUser = detalles;
+      console.log(this.detalleUser);
     })
 
   }

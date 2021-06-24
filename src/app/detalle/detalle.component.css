@@ -1,25 +1,37 @@
 .imagen{
-width: 30em;
+width: 35em;
 border-radius: 10px;
-border: 1px solid black;
-padding: 1em;
-margin-right: 2em;
+margin-right: 2em ;
 }
 img{
     width: 100%;
     border-radius: 5px;
+    margin: 0 auto;
+    height: auto;
 }
 .description{
     background-color: gainsboro;
     border-radius:10px ;
+    margin-bottom: 6em;
+    margin-top: 6em;
 }
 .details{
     margin-top: 2em;
 }
 button{
     margin-bottom: 2em;
+    width: 8em;
+    justify-content:flex-end;
+}
+.button{
+    display: flex;
 }
 
 p{
     font-size: 20px;
+}
+
+.like{
+    border: .5px solid lightcoral;
+    border-radius: 10px;
 }
