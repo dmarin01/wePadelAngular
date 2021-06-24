@@ -3,22 +3,24 @@
     <button class="btn btn-primary" [routerLink]="['/profesores']">Volver</button>
     <div class="header row">
         <div class="imagen col-6">
-            <img [src]="detalleUser.img_cliente">
+            <img [src]="detalleUser?.img_cliente">
         </div>
         <div class="col-6 like">
             <div class="details">
-                <p>Nombre: {{detalleUser?.nombre}} {{detalleUser?.apellidos}}</p>
-                <p>Provincia: {{detalleUser?.provincia}}</p>
+                <div class="nombre">
+                    <h2>{{detalleUser?.nombre}} {{detalleUser?.apellidos}}</h2>
+                </div>
+                <p>{{detalleUser?.provincia}}</p>
             </div>
             <div class="contacto">
-                <p>Precio: {{detalleUser?.precio}} €/h</p>
+                <p> 💰 Precio: {{detalleUser?.precio}} €/h</p>
             </div>
             <div class="filters row">
                 <div class="data_filter">
-                    <p>Experiencia : {{detalleUser?.experiencia}} años</p>
-                    <p>🎾 Material Propio : {{detalleUser?.material_propio}}</p>
-                    <p>📈 Nivel: {{detalleUser?.niveles}} </p>
-                    <p> 🚗 Desplazamiento : {{detalleUser?.desplazamiento}}</p>
+                    <p>👨‍🏫 Experiencia : <span>{{detalleUser?.experiencia}} años</span></p>
+                    <p>🎾 Material Propio : <span>{{getMaterial(detalleUser?.material_propio)}}</span></p>
+                    <p>📈 Nivel: <span>{{getNivel(detalleUser?.niveles)}}</span></p>
+                    <p>🚗 Desplazamiento : <span>{{getDesplazamiento(detalleUser?.desplazamiento)}}</span></p>
                 </div>
                 <div class="button">
                     <!-- Button trigger modal -->
@@ -61,7 +63,6 @@
 <div class="container">
 
     <div class="description col-12 m-3 p-3">
-        <h6 class="m-3">Descripción</h6>
         <!--Descripcion del profe-->
         <p class="m-3">{{detalleUser?.descripcion}}
 

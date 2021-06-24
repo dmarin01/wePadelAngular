@@ -22,9 +22,6 @@ export class ProfileComponent implements OnInit {
 
   }
 
-
-
-
   async ngOnInit() {
 
 
@@ -56,7 +53,7 @@ export class ProfileComponent implements OnInit {
         Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
       ]),
       edad: new FormControl(this.user.edad),
-      descripcion: new FormControl(this.user.descripcion, [Validators.maxLength(250)]),
+      descripcion: new FormControl(this.user.descripcion, [Validators.maxLength(850)]),
       fecha_registro: new FormControl(),
     })
 

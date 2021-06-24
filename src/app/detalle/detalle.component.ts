@@ -24,5 +24,26 @@ export class DetalleComponent implements OnInit {
     })
 
   }
+  getMaterial(material: number) {
+    switch (material) {
+      case 1: return "Si, tiene material propio";
+      case 0: return " No dispongo de material"
+    }
+  }
+  getNivel(nivel: number) {
+    switch (nivel) {
+      case 1: return "Básico";
+      case 2: return " Iniciación";
+      case 3: return "Intermedio";
+      case 4: return " Avanzado";
+      case 5: return "Experto";
+    }
+  }
+  getDesplazamiento(desplazamiento: number) {
+    switch (desplazamiento) {
+      case 1: return "Disposición total de desplazamiento";
+      case 0: return "No dispongo de forma de desplazamiento, clases en mi domicilio y/o instalación"
+    }
+  }
 
 }
