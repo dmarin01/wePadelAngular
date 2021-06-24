@@ -22,32 +22,60 @@
                     <p> 🚗 Desplazamiento : {{detalleUser?.desplazamiento}}</p>
                 </div>
                 <div class="button">
-                    <button class="btn btn-primary" (click)="onClick()">Contactar</button>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Contactar
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Contacta con tu profe</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <p>Teléfono: {{detalleUser?.telefono}}</p>
+                                    <i class="fas fa-envelope"></i>
+                                    <p>Correo: {{detalleUser?.email}}</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
         </div>
-
     </div>
 
-    <div class="description col-11">
-        <h6 class="m-3">Descripción</h6>
-        <!--Descripcion del profe-->
-        <p>Clases de Padel para niños y adultos, divertidas y exigentes. Posibilidad de ser en INGLÉS. Graduado en
-            INEF y Máster
-            del profesorado en Educación Física
+</div>
 
-            Metodología
+<div class="description col-11">
+    <h6 class="m-3">Descripción</h6>
+    <!--Descripcion del profe-->
+    <p>Clases de Padel para niños y adultos, divertidas y exigentes. Posibilidad de ser en INGLÉS. Graduado en
+        INEF y Máster
+        del profesorado en Educación Física
 
-            Clases divertidas y didácticas, aunque también exigentes para los más peques. No faltarán los juegos,
-            pero la técnica no
-            se debe pasar por alto!
-            Para los adultos, no faltará la diversión y la conversación, pero serán clases con cierta exigencia
-            física, se trata de
-            sudar un poco, y haremos hincapié en los errores técnicos.
-            En posesión del titulo de Instructor por la Asociación Profesional Española de Centros de Enseñanza
-            Deportiva.
+        Metodología
 
-        </p>
-    </div>
+        Clases divertidas y didácticas, aunque también exigentes para los más peques. No faltarán los juegos,
+        pero la técnica no
+        se debe pasar por alto!
+        Para los adultos, no faltará la diversión y la conversación, pero serán clases con cierta exigencia
+        física, se trata de
+        sudar un poco, y haremos hincapié en los errores técnicos.
+        En posesión del titulo de Instructor por la Asociación Profesional Española de Centros de Enseñanza
+        Deportiva.
 
+    </p>
 </div>
