@@ -6,4 +6,6 @@ export interface Profesor {
     niveles: number;
     desplazamiento: number;
     fk_clientes?: number;
+    instalacion_propia?: number;
+    descripcion_profesor?: string;
 }

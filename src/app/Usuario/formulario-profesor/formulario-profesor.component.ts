@@ -22,6 +22,7 @@ export class FormularioProfesorComponent implements OnInit {
       nivel: new FormControl('default'),
       desplazamiento: new FormControl('default'),
       instalacion_propia: new FormControl('default'),
+      descripcion_profesor: new FormControl(),
     })
   }
 
@@ -36,7 +37,7 @@ export class FormularioProfesorComponent implements OnInit {
       if (response['affectedRows'] === 1) {
         Swal.fire('Te has registrado como profesor');
         this.formulario.reset();
-        this.router.navigate(['/user'])//o navigate(['/profesores',response['fk_usuarios']
+        this.router.navigate(['/user'])
       }
       if (response['error']) {
         Swal.fire('Ha ocurrido un error', response['error'], 'error')
