@@ -10,8 +10,8 @@ img{
     margin: 0 auto;
     height: auto;
 }
-.description{
-    background-color: gainsboro;
+.description1{
+    background-color: rgb(250, 246, 246);
     border-radius:10px ;
     margin-bottom: 6em;
     margin-top: 6em;
@@ -35,11 +35,12 @@ button{
     display: flex;
 }
 
+
 .modal-header{
-    background-color: rgb(199, 233, 199);
+    background-color: rgb(120, 216, 120);
 }
 .modal-footer{
-    background-color: lightblue;
+    background-color: #eeee;
 }
 p{
     font-family: 'Roboto';
