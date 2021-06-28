@@ -37,11 +37,14 @@ button{
 
 
 .modal-header{
-    background-color: rgb(120, 216, 120);
+    background-color: rgb(155, 180, 208);
+    border-radius: 0 0 5px 5px;
 }
 .modal-footer{
-    background-color: #eeee;
+    background-color:  rgb(155, 180, 208);
+    
 }
+
 p{
     font-family: 'Roboto';
     font-size: 18px;

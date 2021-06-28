@@ -22,6 +22,7 @@
             <!--<input (input)=" onInput($event)" [(ngModel)]="nivel">-->
 
             <select name="nivel" id="nivel" class="form-select" (change)="onInputNivel($event)" [(ngModel)]="nivel">
+                <option value="all" selected>Selecciona nivel</option>
                 <option value="1">Iniciación</option>
                 <option value="2">Básico</option>
                 <option value="3">Intermedio</option>
@@ -33,6 +34,7 @@
             <h5 class="my-3">Instalaciones</h5>
             <select name="instalaciones" id="instalaciones" class="form-select" (change)="onInputInstalaciones($event)"
                 [(ngModel)]="instalaciones">
+                <option value="all">¿Necesitas instalaciones?</option>
                 <option value="1">Si</option>
                 <option value="0">No</option>
             </select>
@@ -40,7 +42,7 @@
         <div class="col-md-12 text-center my-4 wz" *ngIf="(isViewProvincias)">
             <select name="provincias" id="provincias" class="form-select" (change)="onInputProvincias($event)"
                 [(ngModel)]="provincias">
-                <option value="">Elige Provincia</option>
+                <option value="all">Elige Provincia</option>
                 <option value="alava">Álava/Araba</option>
                 <option value="albacete">Albacete</option>
                 <option value="alicante">Alicante</option>

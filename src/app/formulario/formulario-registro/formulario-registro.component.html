@@ -41,7 +41,7 @@
             <label class="form-label">Password</label>
             <input type="password" class="form-control" formControlName="password">
             <p class="error" *ngIf="checkControl('password', 'pattern')">
-                El formato del password es incorrecto
+                El formato del password requiere mayúsculas, minúsculas y símbolos.
             </p>
             <p class="error" *ngIf="checkControl('password','required')">El campo password es requerido</p>
             <div class="mb-3">

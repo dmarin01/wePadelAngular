@@ -54,10 +54,6 @@ export class ListProfComponent implements OnInit {
         this.arrProfesores = response;
       })
       .catch(error => console.log(error));
-
-
-
-
   }
 
   //aparezca por pantalla
@@ -66,6 +62,7 @@ export class ListProfComponent implements OnInit {
     this.isViewNivel = ($event.target.dataset.filter === "2") ? !this.isViewNivel : false;
     this.isViewInstalaciones = ($event.target.dataset.filter === "3") ? !this.isViewInstalaciones : false;
     this.isViewProvincias = ($event.target.dataset.filter === "4") ? !this.isViewProvincias : false;
+
 
   }
 
@@ -76,21 +73,43 @@ export class ListProfComponent implements OnInit {
 
   async onInputNivel($event) {
 
-    this.arrProfesores = await this.profesoresService.getProfesorByNivel($event.target.value)
-    console.log(this.arrProfesores);
-
-
+    this.arrProfesores = await this.profesoresService.getProfesorByNivel($event.target.value);
+    if ($event.target.value === 'all') {
+      this.profesoresService.getAll()
+        .then(response => {
+          console.log(response)
+          this.arrProfesores = response;
+        })
+        .catch(error => console.log(error));
+    }
   }
 
   async onInputInstalaciones($event) {
 
     this.arrProfesores = await this.profesoresService.getProfByInstal($event.target.value);
+    if ($event.target.value === 'all') {
+      this.profesoresService.getAll()
+        .then(response => {
+          console.log(response)
+          this.arrProfesores = response;
+        })
+        .catch(error => console.log(error));
+    }
   }
 
   async onInputProvincias($event) {
     this.arrProfesores = await this.profesoresService.getProfByProvincia($event.target.value);
     console.log(this.arrProfesores);
+    if ($event.target.value === 'all') {
+      this.profesoresService.getAll()
+        .then(response => {
+          console.log(response)
+          this.arrProfesores = response;
+        })
+        .catch(error => console.log(error));
+    }
   }
+
 
 
 }
