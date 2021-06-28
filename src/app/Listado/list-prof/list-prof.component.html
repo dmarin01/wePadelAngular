@@ -11,13 +11,13 @@
                 <li class="filter" data-filter="4" (click)="viewSection($event)">Provincia</li>
             </ul>
         </div>
-        <div class="col-md-12 text-center  " *ngIf="(isViewPrecio)">
+        <div class="col-md-12 text-center mb-2" *ngIf="(isViewPrecio)">
             <h5 class="my-3">Selecciona rango de precios</h5>
             <input [(ngModel)]='precioMin' placeholder="Precio Mínimo">
             <input class="mx-3" [(ngModel)]='precioMax' placeholder="Precio Máximo">
             <button class="btn btn-primary mx-2" (click)="onClickPrecio()">Enviar</button>
         </div>
-        <div class=" text-center wz" *ngIf="(isViewNivel)">
+        <div class=" text-center wz mb-2" *ngIf="(isViewNivel)">
             <h5 class="my-3">Selecciona el nivel de tus clases</h5>
             <!--<input (input)=" onInput($event)" [(ngModel)]="nivel">-->
 
@@ -29,7 +29,7 @@
                 <option value="5">Experto</option>
             </select>
         </div>
-        <div class="col-md-12 text-center wz" *ngIf="(isViewInstalaciones)">
+        <div class="col-md-12 text-center wz mb-2" *ngIf="(isViewInstalaciones)">
             <h5 class="my-3">Instalaciones</h5>
             <select name="instalaciones" id="instalaciones" class="form-select" (change)="onInputInstalaciones($event)"
                 [(ngModel)]="instalaciones">
@@ -37,7 +37,8 @@
                 <option value="0">No</option>
             </select>
         </div>
-        <div class="col-md-12 text-center my-4 wz" *ngIf="(isViewProvincias)">
+        <div class="col-md-12 text-center wz mb-2" *ngIf="(isViewProvincias)">
+            <h5 class="my-3">Selecciona por provincia</h5>
             <select name="provincias" id="provincias" class="form-select" (change)="onInputProvincias($event)"
                 [(ngModel)]="provincias">
                 <option value="">Elige Provincia</option>
